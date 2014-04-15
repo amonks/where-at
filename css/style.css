@@ -9,12 +9,19 @@ body {
     padding: 0;
 }
 
-#map-canvas { 
+#map-canvas, #draw-canvas { 
     height: 100%; 
     position: absolute; 
     width: 100%;
     top: 0; 
     left: 0; 
     bottom: 0;
+}
+
+#map-canvas {
+    z-index: 5;
+}
+
+#draw-canvas {
     z-index: 1;
 }
