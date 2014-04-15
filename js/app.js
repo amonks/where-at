@@ -9,7 +9,7 @@ var map;
 function initialize() {
     var mapOptions = {
         disableDefaultUI: true,
-        panControl: true,
+        panControl: false,
         zoomControl: false,
         zoom: 15,
         mapTypeControl: true,
