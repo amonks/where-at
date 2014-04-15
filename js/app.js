@@ -32,7 +32,7 @@ function initialize() {
     newPolyLine({
         strokeColor: randomColor(),
         strokeOpacity: 1.0,
-        strokeWeight: 3
+        strokeWeight: 5
     });
 
     // Add a listener for the click event
@@ -94,7 +94,7 @@ function DrawControl(controlDiv, map) {
     newPolyLine({
         strokeColor: randomColor(),
         strokeOpacity: 1.0,
-        strokeWeight: 3
+        strokeWeight: 5
     });
   });
 
