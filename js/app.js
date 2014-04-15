@@ -1,6 +1,8 @@
+var drawingMode = true;
+
 
 // instantiate canvases
-var mapCanvas = $('#map-canvas');
+var mapCanvas = $('#map-canvas')
 var drawCanvas = $('#draw-canvas');
 
 // google maps shit
@@ -29,17 +31,22 @@ function mapSketch(processing) {
 
     processing.draw = function() {
         // draw loop
+        // if drawingMode
+        	// and mouseDown
+        		// get gps of mouse, add point to polyLine
     };
 
     processing.mousePressed = function() {
-        // mouse pressed
+		// mouseDown = true
+		// new polyLine
     };
 
     processing.mouseReleased = function() {
-        // mouse released
+		// mouseDown = false
+		// save polyLine
     };
 
-};
+}
 
 // attach the sketch function to the canvas
 var processingInstance = new Processing(drawCanvas, mapSketch);
