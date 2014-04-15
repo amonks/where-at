@@ -66,14 +66,14 @@
     // automatically center on current location
     function handleNoGeolocation(errorFlag) {
         if (errorFlag) {
-            var content = 'Error: The Geolocation service failed.';
+            var content = 'Error: Couldn\'t find your current location.';
         } else {
             var content = 'Error: Your browser doesn\'t support geolocation.';
         }
 
         var options = {
             map: map,
-            position: new google.maps.LatLng(60, 105),
+            position: new google.maps.LatLng(41.880454799999995, -87.6251393),
             content: content
         };
 
