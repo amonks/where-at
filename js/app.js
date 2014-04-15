@@ -1,20 +1,39 @@
+
+// namespace
+var mapDraw = {}
+
+
 var poly;
 var map;
 
 function initialize() {
     var mapOptions = {
+        disableDefaultUI: true,
+        panControl: true,
+        zoomControl: false,
         zoom: 15,
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+          style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+        },
     };
 
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-    var polyOptions = {
-        strokeColor: '#ff0000',
+  // Create the DIV to hold the control and
+  // call the DrawControl() constructor passing
+  // in this DIV.
+  var drawControlDiv = document.createElement('div');
+  var drawControl = new DrawControl(drawControlDiv, map);
+
+  drawControlDiv.index = 1;
+  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(drawControlDiv);
+
+    newPolyLine({
+        strokeColor: randomColor(),
         strokeOpacity: 1.0,
         strokeWeight: 3
-    };
-    poly = new google.maps.Polyline(polyOptions);
-    poly.setMap(map);
+    });
 
     // Add a listener for the click event
     // I ought to change this to allow dragging
@@ -40,6 +59,51 @@ function initialize() {
         // Browser doesn't support Geolocation
         handleNoGeolocation(false);
     }
+}
+
+
+function DrawControl(controlDiv, map) {
+
+  // Set CSS styles for the DIV containing the control
+  // Setting padding to 5 px will offset the control
+  // from the edge of the map
+  controlDiv.style.padding = '5px';
+
+  // Set CSS for the control border
+  var controlUI = document.createElement('div');
+  controlUI.style.backgroundColor = 'white';
+  controlUI.style.borderStyle = 'solid';
+  controlUI.style.borderWidth = '2px';
+  controlUI.style.cursor = 'pointer';
+  controlUI.style.textAlign = 'center';
+  controlUI.title = 'Click to start a new path [dumb ux right here]';
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior
+  var controlText = document.createElement('div');
+  controlText.style.fontFamily = 'Arial,sans-serif';
+  controlText.style.fontSize = '12px';
+  controlText.style.paddingLeft = '4px';
+  controlText.style.paddingRight = '4px';
+  controlText.innerHTML = '<b>Draw Path</b>';
+  controlUI.appendChild(controlText);
+
+  // Setup the click event listeners: simply set the map to
+  // Chicago
+  google.maps.event.addDomListener(controlUI, 'click', function() {
+    newPolyLine({
+        strokeColor: randomColor(),
+        strokeOpacity: 1.0,
+        strokeWeight: 3
+    });
+  });
+
+}
+
+// function to initialize a new path
+function newPolyLine(polyOptions) {
+    poly = new google.maps.Polyline(polyOptions);
+    poly.setMap(map);
 }
 
 
@@ -81,6 +145,13 @@ function addLatLng(event) {
     //   title: '#' + path.getLength(),
     //   map: map
     // });
+}
+
+
+// function to return a random hex color
+// classic elegant solution from http://paulirish.com/2009/random-hex-color-code-snippets/
+function randomColor() {
+    return '#' + Math.floor(Math.random() * 16777215).toString(16);
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
