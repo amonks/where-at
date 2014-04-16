@@ -1,1 +1,1 @@
-html{height:100%}body{height:100%;margin:0;padding:0}#map-canvas,#draw-canvas{height:100%;position:absolute;width:100%;top:0;left:0;bottom:0}#map-canvas{z-index:5}#draw-canvas{z-index:1}
+html{height:100%}body{height:100%;margin:0;padding:0}#map-canvas{height:100%;position:absolute;width:100%;top:0;left:0;bottom:0}#controls{position:absolute;bottom:0;left:0}

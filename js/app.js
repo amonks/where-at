@@ -1,43 +1,57 @@
-
 // namespace
 var mapDraw = {}
 
-
-var poly;
 var map;
+
+var drawingManager = new google.maps.drawing.DrawingManager({
+    drawingMode: google.maps.drawing.OverlayType.POLYLINE,
+    drawingControl: true,
+    drawingControlOptions: {
+        position: google.maps.ControlPosition.TOP_CENTER,
+        drawingModes: [google.maps.drawing.OverlayType.POLYLINE, google.maps.drawing.OverlayType.MARKER, google.maps.drawing.OverlayType.POLYGON, google.maps.drawing.OverlayType.CIRCLE, google.maps.drawing.OverlayType.RECTANGLE]
+    },
+    polylineOptions: {
+        strokeWeight: 5,
+        strokeColor: '#ff0000',
+        clickable: false,
+        zIndex: 1,
+        editable: false
+    },
+    polygonOptions: {
+        editable: false
+    },
+    markerOptions: {
+        title: "My house!",
+        editable: false
+    }
+});
 
 function initialize() {
     var mapOptions = {
-        disableDefaultUI: true,
         panControl: false,
         zoomControl: false,
         zoom: 15,
         mapTypeControl: true,
         mapTypeControlOptions: {
-          style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
         },
     };
 
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-  // Create the DIV to hold the control and
-  // call the DrawControl() constructor passing
-  // in this DIV.
-  var drawControlDiv = document.createElement('div');
-  var drawControl = new DrawControl(drawControlDiv, map);
+    drawingManager.setMap(map);
 
-  drawControlDiv.index = 1;
-  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(drawControlDiv);
-
-    newPolyLine({
-        strokeColor: randomColor(),
-        strokeOpacity: 1.0,
-        strokeWeight: 5
+    //After creating 'drawingManager' object in if block 
+    google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
+        if (event.type == google.maps.drawing.OverlayType.POLYLINE) {
+            path = event.overlay.getPath();
+            for (var i = 0; i < path.length; i++) {
+                console.log(path.getAt(i) + "\n");
+            }
+        } else {
+            console.log(event.type);
+        };
     });
-
-    // Add a listener for the click event
-    // I ought to change this to allow dragging
-    google.maps.event.addListener(map, 'click', addLatLng);
 
     // Try HTML5 geolocation
     if (navigator.geolocation) {
@@ -59,55 +73,72 @@ function initialize() {
         // Browser doesn't support Geolocation
         handleNoGeolocation(false);
     }
-}
 
 
-function DrawControl(controlDiv, map) {
 
-  // Set CSS styles for the DIV containing the control
-  // Setting padding to 5 px will offset the control
-  // from the edge of the map
-  controlDiv.style.padding = '5px';
+    // search
 
-  // Set CSS for the control border
-  var controlUI = document.createElement('div');
-  controlUI.style.backgroundColor = 'white';
-  controlUI.style.borderStyle = 'solid';
-  controlUI.style.borderWidth = '2px';
-  controlUI.style.cursor = 'pointer';
-  controlUI.style.textAlign = 'center';
-  controlUI.title = 'Click to start a new path [dumb ux right here]';
-  controlDiv.appendChild(controlUI);
+    var markers = [];
 
-  // Set CSS for the control interior
-  var controlText = document.createElement('div');
-  controlText.style.fontFamily = 'Arial,sans-serif';
-  controlText.style.fontSize = '12px';
-  controlText.style.paddingLeft = '4px';
-  controlText.style.paddingRight = '4px';
-  controlText.innerHTML = '<b>New Path (lol)</b>';
-  controlUI.appendChild(controlText);
+    // Create the search box and link it to the UI element.
+    var input = /** @type {HTMLInputElement} */ (
+        document.getElementById('pac-input'));
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-  // Setup the click event listeners: simply set the map to
-  // Chicago
-  google.maps.event.addDomListener(controlUI, 'click', function() {
-    newPolyLine({
-        strokeColor: randomColor(),
-        strokeOpacity: 1.0,
-        strokeWeight: 5
+    var searchBox = new google.maps.places.SearchBox(
+        /** @type {HTMLInputElement} */
+        (input));
+
+    // Listen for the event fired when the user selects an item from the
+    // pick list. Retrieve the matching places for that item.
+    google.maps.event.addListener(searchBox, 'places_changed', function() {
+        var places = searchBox.getPlaces();
+
+        for (var i = 0, marker; marker = markers[i]; i++) {
+            marker.setMap(null);
+        }
+
+        // For each place, get the icon, place name, and location.
+        markers = [];
+        var bounds = new google.maps.LatLngBounds();
+        for (var i = 0, place; place = places[i]; i++) {
+            var image = {
+                url: place.icon,
+                size: new google.maps.Size(71, 71),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            var marker = new google.maps.Marker({
+                map: map,
+                icon: image,
+                title: place.name,
+                position: place.geometry.location
+            });
+
+            markers.push(marker);
+
+            bounds.extend(place.geometry.location);
+        }
+
+        map.fitBounds(bounds);
     });
-  });
 
+    // Bias the SearchBox results towards places that are within the bounds of the
+    // current map's viewport.
+    google.maps.event.addListener(map, 'bounds_changed', function() {
+        var bounds = map.getBounds();
+        searchBox.setBounds(bounds);
+    });
 }
 
-// function to initialize a new path
-function newPolyLine(polyOptions) {
-    poly = new google.maps.Polyline(polyOptions);
-    poly.setMap(map);
-}
+
 
 
 // automatically center on current location
+
 function handleNoGeolocation(errorFlag) {
     if (errorFlag) {
         var content = 'Error: Couldn\'t find your location.';
@@ -126,32 +157,13 @@ function handleNoGeolocation(errorFlag) {
 }
 
 
-/**
- * Handles click events on a map, and adds a new point to the Polyline.
- * @param {google.maps.MouseEvent} event
- */
-
-function addLatLng(event) {
-
-    var path = poly.getPath();
-
-    // Because path is an MVCArray, we can simply append a new coordinate
-    // and it will automatically appear.
-    path.push(event.latLng);
-
-    // Add a new marker at the new plotted point on the polyline.
-    // var marker = new google.maps.Marker({
-    //   position: event.latLng,
-    //   title: '#' + path.getLength(),
-    //   map: map
-    // });
-}
-
-
 // function to return a random hex color
 // classic elegant solution from http://paulirish.com/2009/random-hex-color-code-snippets/
+
 function randomColor() {
     return '#' + Math.floor(Math.random() * 16777215).toString(16);
 }
+
+
 
 google.maps.event.addDomListener(window, 'load', initialize);
