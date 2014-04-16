@@ -7,7 +7,7 @@ var drawingManager = new google.maps.drawing.DrawingManager({
     drawingMode: google.maps.drawing.OverlayType.POLYLINE,
     drawingControl: true,
     drawingControlOptions: {
-        position: google.maps.ControlPosition.TOP_CENTER,
+        position: google.maps.ControlPosition.BOTTOM_CENTER,
         drawingModes: [google.maps.drawing.OverlayType.POLYLINE, google.maps.drawing.OverlayType.MARKER, google.maps.drawing.OverlayType.POLYGON, google.maps.drawing.OverlayType.CIRCLE, google.maps.drawing.OverlayType.RECTANGLE]
     },
     polylineOptions: {
@@ -32,7 +32,7 @@ function initialize() {
         panControl: false,
         zoomControl: false,
         zoom: 10,
-        mapTypeControl: true,
+        mapTypeControl: false,
         mapTypeControlOptions: {
             style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
         },
