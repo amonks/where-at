@@ -28,6 +28,7 @@ var drawingManager = new google.maps.drawing.DrawingManager({
 
 function initialize() {
     var mapOptions = {
+        disableDefaultUI: true,
         panControl: false,
         zoomControl: false,
         zoom: 10,
@@ -120,10 +121,14 @@ function initialize() {
 
             markers.push(marker);
 
-            bounds.extend(place.geometry.location);
+            if (place.geometry.viewport) {
+                map.fitBounds(place.geometry.viewport);
+            } else {
+                map.setCenter(place.geometry.location);
+                map.setZoom(17);
+            }
         }
 
-        map.fitBounds(bounds);
     });
 
     // Bias the SearchBox results towards places that are within the bounds of the
