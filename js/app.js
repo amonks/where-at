@@ -1,5 +1,4 @@
-// namespace
-var mapDraw = {}
+var save = new SaveData;
 
 var map;
 
@@ -21,7 +20,6 @@ var drawingManager = new google.maps.drawing.DrawingManager({
         editable: false
     },
     markerOptions: {
-        title: "My house!",
         editable: false
     }
 });
@@ -44,25 +42,27 @@ function initialize() {
 
     //After creating 'drawingManager' object in if block 
     google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
-        console.log(event.type + ": ");
+        var output = (event.type + ": \n");
         switch (event.type) {
             case google.maps.drawing.OverlayType.MARKER:
-                console.log(event.overlay.getPosition() + "\n");
+                output = output + (event.overlay.getPosition() + "\n");
                 break;
             case google.maps.drawing.OverlayType.RECTANGLE:
-                console.log(event.overlay.getBounds() + "\n");
+                output = output + (event.overlay.getBounds() + "\n");
                 break;
             case google.maps.drawing.OverlayType.CIRCLE:
-                console.log(event.overlay.getCenter() + "\n" )
-                console.log( event.overlay.getRadius() + "\n");
+                output = output + (event.overlay.getCenter() + "\n")
+                output = output + (event.overlay.getRadius() + "\n");
                 break;
             default:
                 path = event.overlay.getPath();
                 for (var i = 0; i < path.length; i++) {
-                    console.log( path.getAt(i) + '\n' )
+                    output = output + (path.getAt(i) + '\n')
                 };
                 break;
         };
+        console.log(output);
+        save.add(output);
     });
 
     // Try HTML5 geolocation
@@ -179,6 +179,18 @@ function handleNoGeolocation(errorFlag) {
 function randomColor() {
     return '#' + Math.floor(Math.random() * 16777215).toString(16);
 }
+
+
+// constructor for save state
+function SaveData() {
+    this.drawLog = "";
+};
+SaveData.prototype.base64 = function() {
+    return btoa(this.drawLog);
+};
+SaveData.prototype.add = function(input) {
+    this.drawLog += input;
+};
 
 
 
