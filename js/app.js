@@ -30,7 +30,7 @@ function initialize() {
     var mapOptions = {
         panControl: false,
         zoomControl: false,
-        zoom: 15,
+        zoom: 10,
         mapTypeControl: true,
         mapTypeControlOptions: {
             style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
