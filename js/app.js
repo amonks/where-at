@@ -148,7 +148,11 @@ function initialize() {
         var bounds = map.getBounds();
         searchBox.setBounds(bounds);
     });
+
 }
+
+
+
 
 
 
@@ -182,6 +186,7 @@ function randomColor() {
 
 
 // constructor for save state
+
 function SaveData() {
     this.drawLog = "";
 };
@@ -191,7 +196,6 @@ SaveData.prototype.base64 = function() {
 SaveData.prototype.add = function(input) {
     this.drawLog += input;
 };
-
 
 
 google.maps.event.addDomListener(window, 'load', initialize);
