@@ -44,13 +44,24 @@ function initialize() {
 
     //After creating 'drawingManager' object in if block 
     google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
-        if (event.type == google.maps.drawing.OverlayType.POLYLINE) {
-            path = event.overlay.getPath();
-            for (var i = 0; i < path.length; i++) {
-                console.log(path.getAt(i) + "\n");
-            }
-        } else {
-            console.log(event.type);
+        console.log(event.type + ": ");
+        switch (event.type) {
+            case google.maps.drawing.OverlayType.MARKER:
+                console.log(event.overlay.getPosition() + "\n");
+                break;
+            case google.maps.drawing.OverlayType.RECTANGLE:
+                console.log(event.overlay.getBounds() + "\n");
+                break;
+            case google.maps.drawing.OverlayType.CIRCLE:
+                console.log(event.overlay.getCenter() + "\n" )
+                console.log( event.overlay.getRadius() + "\n");
+                break;
+            default:
+                path = event.overlay.getPath();
+                for (var i = 0; i < path.length; i++) {
+                    console.log( path.getAt(i) + '\n' )
+                };
+                break;
         };
     });
 
