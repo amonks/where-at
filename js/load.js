@@ -98,7 +98,7 @@ function getQueryString() {
     if (queryString.length <= 1) {
         return null;
     }
-    return decompressFromUTF16(queryString);
+    return LZString.decompressFromUTF16g(queryString);
 }
 
 
