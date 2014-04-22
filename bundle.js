@@ -282,14 +282,13 @@ SaveData.prototype.save = function() {
     jQuery.urlShortener({
         longUrl: longUrl,
         success: function(shortUrl) {
-            window.location = shortUrl;
+            console.log(shortUrl);
+            // window.location = shortUrl;
         },
         error: function(err) {
             alert(JSON.stringify(err));
         }
     });
-    console.log(shortUrl);
-    // window.location = shortUrl;
 };
 SaveData.prototype.base64 = function() {
     return btoa(this.metadata() + this.drawLog);
