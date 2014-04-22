@@ -14,7 +14,6 @@ SaveData.prototype.save = function() {
         longUrl: longUrl,
         success: function(shortUrl) {
             console.log(shortUrl);
-            // window.location = shortUrl;
         },
         error: function(err) {
             alert(JSON.stringify(err));
