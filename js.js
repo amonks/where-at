@@ -266,7 +266,7 @@ function getQueryString() {
     if (queryString.length <= 1) {
         return null;
     }
-    return atob(decompressFromUTF16(queryString));
+    return atob(decompress(queryString));
 }
 
 
@@ -987,7 +987,7 @@ SaveData.prototype.save = function() {
     });
 };
 SaveData.prototype.base64 = function() {
-    return btoa(LZString.compressToUTF16(this.metadata() + this.drawLog.join('|')));
+    return btoa(LZString.compress(this.metadata() + this.drawLog.join('|')));
 };
 SaveData.prototype.metadata = function() {
     var output = "";
