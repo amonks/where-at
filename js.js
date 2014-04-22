@@ -70,7 +70,6 @@ function draw() {
 
     //After creating 'drawingManager' object in if block 
     google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
-        var output = "|";
         switch (event.type) {
             case google.maps.drawing.OverlayType.MARKER:
                 output = output + "m" + (event.overlay.getPosition() + "");
@@ -92,7 +91,7 @@ function draw() {
                 constructPolyline(output);
                 break;
         };
-        output = output.replace(/\(/g, '').replace(/\)/g, '');
+        output = "|" + output.replace(/\(/g, '').replace(/\)/g, '');
         console.log(output);
         save.add(output);
     });
