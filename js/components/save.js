@@ -26,8 +26,8 @@ SaveData.prototype.base64 = function() {
 };
 SaveData.prototype.metadata = function() {
     var output = "";
-    output += "zoom(" + map.zoom + ")|";
-    output += "center" + map.getCenter().toString() + "|";
+    output += "z" + map.zoom + "|";
+    output += "c" + map.getCenter().toString() + "|";
     return output;
 };
 SaveData.prototype.add = function(input) {

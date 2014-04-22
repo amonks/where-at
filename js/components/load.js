@@ -25,7 +25,7 @@
 
 function constructPolyline(logstring) {
     var currentPoint;
-    var pointsLog = logstring.replace('polyline', '').replace(/\(/g, '').replace(/\)/g, '').split(';');
+    var pointsLog = logstring.replace('p', '').replace(/\(/g, '').replace(/\)/g, '').split(';');
     console.log(pointsLog);
 
     var latlngs = new google.maps.MVCArray();
@@ -48,7 +48,7 @@ function constructPolyline(logstring) {
 }
 
 function constructMarker(logstring) {
-    var currentPoint = logstring.replace('marker', '').replace(/\(/g, '').replace(/\)/g, '').split(', ')
+    var currentPoint = logstring.replace('m', '').replace(/\(/g, '').replace(/\)/g, '').split(', ')
 
     var latlngs = new google.maps.MVCArray();
     latlngs.push(new google.maps.LatLng(parseFloat(currentPoint[0]), parseFloat(currentPoint[1])));
@@ -75,12 +75,12 @@ function createMarker(opts) {
 
 
 function constructZoom(logstring) {
-    var currentZoom = logstring.replace('zoom', '').replace(/\(/g, '').replace(/\)/g, '');
+    var currentZoom = logstring.replace('z', '').replace(/\(/g, '').replace(/\)/g, '');
     map.setZoom(parseInt(currentZoom));
 }
 
 function constructCenter(logstring) {
-    var currentCenter = logstring.replace('center', '').replace(/\(/g, '').replace(/\)/g, '');
+    var currentCenter = logstring.replace('c', '').replace(/\(/g, '').replace(/\)/g, '');
     console.log(currentCenter);
     var currentCenterPoint = currentCenter.split(', ');
     map.setCenter(new google.maps.LatLng(parseFloat(currentCenterPoint[0]), parseFloat(currentCenterPoint[1])))
