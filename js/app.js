@@ -7,10 +7,12 @@ var drawingManager = new google.maps.drawing.DrawingManager({
     drawingControl: true,
     drawingControlOptions: {
         position: google.maps.ControlPosition.TOP_LEFT,
-        drawingModes: [google.maps.drawing.OverlayType.POLYLINE, google.maps.drawing.OverlayType.MARKER, google.maps.drawing.OverlayType.POLYGON, google.maps.drawing.OverlayType.CIRCLE, google.maps.drawing.OverlayType.RECTANGLE]
+        // drawingModes: [google.maps.drawing.OverlayType.POLYLINE, google.maps.drawing.OverlayType.MARKER, google.maps.drawing.OverlayType.POLYGON, google.maps.drawing.OverlayType.CIRCLE, google.maps.drawing.OverlayType.RECTANGLE]
+        drawingModes: [google.maps.drawing.OverlayType.POLYLINE, google.maps.drawing.OverlayType.MARKER]
     },
     polylineOptions: {
         strokeWeight: 5,
+        strokeOpacity: 0.5,
         strokeColor: '#ff0000',
         clickable: false,
         zIndex: 1,
@@ -254,8 +256,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 // (42.018692376843845, -87.87551879882812)
 // 2845.658621411023
 //
-// rectangle: 
-// ((41.97991089691236, -88.1817626953125), (42.00950942549379, -88.09249877929688))
+// rectangle((41.89090494447032, -87.62798309326172), (41.90585436043303, -87.62369155883789)) 
 //
 // marker(43.229195113965005, -90.1263427734375) 
 //
@@ -281,8 +282,8 @@ function constructPolyline(logstring) {
     var line = new google.maps.Polyline({
         path: latlngs,
         strokeColor: "#FF0000",
-        strokeOpacity: 0.5,
-        strokeWeight: 10,
+        strokeOpacity: 0.8,
+        strokeWeight: 5,
         map: map
     });
 }
@@ -311,4 +312,23 @@ function createMarker(opts) {
         marker = null;
     });
     return marker;
+}
+
+
+
+
+
+// function to get the current query string (anything in the location bar after a '?'), and de-base64 it.
+
+function getQueryString() {
+    if (window.location.href.indexOf('?') == -1) {
+        // if there's no '?', there's no query string...
+        return null;
+    };
+    // otherwise get everything after it.
+    var queryString = window.location.href.slice(window.location.href.indexOf('?') + 1);
+    if (queryString.length <= 1) {
+        return null;
+    }
+    return atob(queryString);
 }
