@@ -76,13 +76,13 @@ function draw() {
                 output = output + "m" + (event.overlay.getPosition() + "");
                 constructMarker(output);
                 break;
-            case google.maps.drawing.OverlayType.RECTANGLE:
-                output = output + "r" + (event.overlay.getBounds() + "");
-                break;
-            case google.maps.drawing.OverlayType.CIRCLE:
-                output = output + "c" + (event.overlay.getCenter() + "")
-                output = output + (event.overlay.getRadius() + "");
-                break;
+            // case google.maps.drawing.OverlayType.RECTANGLE:
+            //     output = output + "r" + (event.overlay.getBounds() + "");
+            //     break;
+            // case google.maps.drawing.OverlayType.CIRCLE:
+            //     output = output + "c" + (event.overlay.getCenter() + "")
+            //     output = output + (event.overlay.getRadius() + "");
+            //     break;
             default:
                 path = event.overlay.getPath();
                 output = output + "p";
