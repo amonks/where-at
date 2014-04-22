@@ -46,15 +46,17 @@ function initialize() {
         buttonLabelHtml: "Share"
     };
 
+    load();
+
     drawingManager.setMap(map);
 
-    var snapShotControl = new SnapShotControl(snapOpts);
+    // var snapShotControl = new SnapShotControl(snapOpts);
 
 
     // log new overlays
     //After creating 'drawingManager' object in if block 
     google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
-        var output = (event.type + "");
+        var output = ("|" + event.type + "");
         switch (event.type) {
             case google.maps.drawing.OverlayType.MARKER:
                 output = output + (event.overlay.getPosition() + "");
@@ -331,4 +333,21 @@ function getQueryString() {
         return null;
     }
     return atob(queryString);
+}
+
+
+function getOverlayArray() {
+    return getQueryString().split('|');
+}
+
+function load() {
+    var overlayArray = getOverlayArray();
+    for (var i = overlayArray.length - 1; i >= 0; i--) {
+        if (overlayArray[i].indexOf("polyline") !== -1) {
+            constructPolyline(overlayArray[i])
+        }
+        if (overlayArray[i].indexOf("marker") !== -1) {
+            constructMarker(overlayArray[i]);
+        }
+    }; 
 }
