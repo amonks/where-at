@@ -28,6 +28,7 @@ function draw() {
 
     //After creating 'drawingManager' object in if block 
     google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
+        output = "";
         switch (event.type) {
             case google.maps.drawing.OverlayType.MARKER:
                 output = output + "m" + (event.overlay.getPosition() + "");
