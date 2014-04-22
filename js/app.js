@@ -38,32 +38,47 @@ function initialize() {
 
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
+    // add control
+    var snapOpts = {
+        map: map,
+        buttonLabelHtml: "Share"
+    };
+
     drawingManager.setMap(map);
 
+    var snapShotControl = new SnapShotControl(snapOpts);
+
+
+    // log new overlays
     //After creating 'drawingManager' object in if block 
     google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
-        var output = (event.type + ": \n");
+        var output = (event.type + "");
         switch (event.type) {
             case google.maps.drawing.OverlayType.MARKER:
-                output = output + (event.overlay.getPosition() + "\n");
+                output = output + (event.overlay.getPosition() + "");
+                constructMarker(output);
                 break;
             case google.maps.drawing.OverlayType.RECTANGLE:
-                output = output + (event.overlay.getBounds() + "\n");
+                output = output + (event.overlay.getBounds() + "");
                 break;
             case google.maps.drawing.OverlayType.CIRCLE:
-                output = output + (event.overlay.getCenter() + "\n")
-                output = output + (event.overlay.getRadius() + "\n");
+                output = output + (event.overlay.getCenter() + "")
+                output = output + (event.overlay.getRadius() + "");
                 break;
             default:
                 path = event.overlay.getPath();
                 for (var i = 0; i < path.length; i++) {
-                    output = output + (path.getAt(i) + '\n')
+                    output = output + (path.getAt(i) + ';')
                 };
+                constructPolyline(output);
                 break;
         };
         console.log(output);
         save.add(output);
     });
+
+
+
 
     // Try HTML5 geolocation
     if (navigator.geolocation) {
@@ -185,6 +200,28 @@ function randomColor() {
 }
 
 
+function saveImage() {
+    $('body').html2canvas();
+    var queue = html2canvas.Parse();
+    var canvas = html2canvas.Renderer(queue, {
+        elements: {
+            length: 1
+        }
+    });
+    var img = canvas.toDataURL();
+    window.open(img);
+    // ImageSaver.download_data_uri(canvas.toDataURL("image/png"), "map");
+    // html2canvas(document.body, {
+    //     onrendered: function(canvas) {
+    //         // to save the image to the user's computer with a specified filename:
+    //     }
+    // });
+}
+
+
+
+
+
 // constructor for save state
 
 function SaveData() {
@@ -199,3 +236,79 @@ SaveData.prototype.add = function(input) {
 
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+
+// construct from logs
+
+
+// sample log
+//
+// polygon: 
+// (42.14304156290939, -88.0499267578125)
+// (42.10943017110108, -87.93182373046875)
+// (42.0615286181226, -88.01422119140625)
+//
+// circle: 
+// (42.018692376843845, -87.87551879882812)
+// 2845.658621411023
+//
+// rectangle: 
+// ((41.97991089691236, -88.1817626953125), (42.00950942549379, -88.09249877929688))
+//
+// marker(43.229195113965005, -90.1263427734375) 
+//
+// polyline(42.014611228817955, -87.89749145507812);(41.99011884096809, -87.48550415039062);(41.62160222224564, -87.40310668945312);(41.54764462357737, -87.98812866210938);(41.76926321969369, -87.79586791992188);(41.820455096140314, -87.60635375976562);(42.014611228817955, -87.89749145507812); 
+
+
+
+function constructPolyline(logstring) {
+    var currentPoint;
+    var pointsLog = logstring.replace('polyline', '').replace(/\(/g, '').replace(/\)/g, '').split(';');
+    console.log(pointsLog);
+
+    var latlngs = new google.maps.MVCArray();
+
+
+    for (var i = pointsLog.length - 2; i >= 0; i--) {
+        console.log(pointsLog[i].split(', '));
+        var currentPoint = pointsLog[i].split(', ');
+        latlngs.push(new google.maps.LatLng(parseFloat(currentPoint[0]), parseFloat(currentPoint[1])));
+    };
+
+
+    var line = new google.maps.Polyline({
+        path: latlngs,
+        strokeColor: "#FF0000",
+        strokeOpacity: 0.5,
+        strokeWeight: 10,
+        map: map
+    });
+}
+
+function constructMarker(logstring) {
+    var currentPoint = logstring.replace('marker', '').replace(/\(/g, '').replace(/\)/g, '').split(', ')
+
+    var latlngs = new google.maps.MVCArray();
+    latlngs.push(new google.maps.LatLng(parseFloat(currentPoint[0]), parseFloat(currentPoint[1])));
+
+    // add markers
+    latlngs.forEach(function(pos, i) {
+        createMarker({
+            map: map,
+            position: pos
+        });
+    });
+}
+
+
+
+function createMarker(opts) {
+    var marker = new google.maps.Marker(opts);
+    google.maps.event.addListenerOnce(marker, "click", function() {
+        marker.setMap(null);
+        marker = null;
+    });
+    return marker;
+}
