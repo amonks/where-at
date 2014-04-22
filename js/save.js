@@ -22,7 +22,7 @@ SaveData.prototype.save = function() {
     });
 };
 SaveData.prototype.base64 = function() {
-    return btoa(this.metadata() + this.drawLog.join('|g'));
+    return btoa(this.metadata() + this.drawLog.join('|'));
 };
 SaveData.prototype.metadata = function() {
     var output = "";
