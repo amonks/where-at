@@ -51,7 +51,7 @@ function saveControl() {
     var saveControl = new SaveControl(saveControlDiv, map);
 
     saveControlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(saveControlDiv);
+    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(saveControlDiv);
 
 
 }

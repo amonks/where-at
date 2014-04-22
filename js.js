@@ -26,7 +26,7 @@ function initialize() {
 
 
     saveControl();
-    clearControl();
+    cleargControl();
 
 
     var options = {
@@ -55,7 +55,7 @@ function clearControl() {
     var clearControl = new ClearControl(clearControlDiv, map);
 
     clearControlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.BOTTOM_RIGHT].push(clearControlDiv);
+    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(clearControlDiv);
 
 
 }
@@ -97,7 +97,7 @@ function ClearControl(controlDiv, map) {
     // Setup the click event listeners: simply set the map to
     // Chicago
     google.maps.event.addDomListener(controlUI, 'click', function() {
-        clear.clear();
+        window.location = window.location.href.split('?')[0];
     });
 
 }
@@ -351,7 +351,7 @@ function saveControl() {
     var saveControl = new SaveControl(saveControlDiv, map);
 
     saveControlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(saveControlDiv);
+    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(saveControlDiv);
 
 
 }
