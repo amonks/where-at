@@ -26,7 +26,7 @@ function initialize() {
 
 
     saveControl();
-    cleargControl();
+    clearControl();
 
 
     var options = {
