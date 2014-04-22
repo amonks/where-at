@@ -91,7 +91,7 @@ function draw() {
                 constructPolyline(output);
                 break;
         };
-        output = "|" + output.replace(/\(/g, '').replace(/\)/g, '');
+        output = "|" + output.replace(/\(/g, '').replace(/\)/g, '').replace(' ', '');
         console.log(output);
         save.add(output);
     });
@@ -307,7 +307,7 @@ SaveData.prototype.base64 = function() {
 SaveData.prototype.metadata = function() {
     var output = "";
     output += "z" + map.zoom + "|";
-    output += "c" + map.getCenter().toString() + "|";
+    output += "c" + map.getCenter().toString();
     return output;
 };
 SaveData.prototype.add = function(input) {

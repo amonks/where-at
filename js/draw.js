@@ -49,7 +49,7 @@ function draw() {
                 constructPolyline(output);
                 break;
         };
-        output = "|" + output.replace(/\(/g, '').replace(/\)/g, '');
+        output = "|" + output.replace(/\(/g, '').replace(/\)/g, '').replace(' ', '');
         console.log(output);
         save.add(output);
     });
