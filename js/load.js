@@ -98,7 +98,7 @@ function getQueryString() {
     if (queryString.length <= 1) {
         return null;
     }
-    return atob(LZString.decompressFromBase64(queryString));
+    return LZString.decompressFromBase64(queryString);
 }
 
 
