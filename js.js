@@ -92,7 +92,7 @@ function draw() {
                 constructPolyline(output);
                 break;
         };
-        output = "|" + output.replace(/\(/g, '').replace(/\)/g, '').replace(' ', '');
+        output = output.replace(/\(/g, '').replace(/\)/g, '').replace(' ', '');
         console.log(output);
         save.add(output);
     });
@@ -226,11 +226,11 @@ function load() {
             }
             if (overlayArray[i].indexOf("p") !== -1) {
                 constructPolyline(overlayArray[i]);
-                save.add("|" + overlayArray[i]);
+                save.add(overlayArray[i]);
             }
             if (overlayArray[i].indexOf("m") !== -1) {
                 constructMarker(overlayArray[i]);
-                save.add("|" + overlayArray[i]);
+                save.add(overlayArray[i]);
             }
         };
     };
@@ -283,7 +283,7 @@ var save = new SaveData;
 // constructor for save state
 
 function SaveData() {
-    this.drawLog = "";
+    this.drawLog = Array.new;
 };
 SaveData.prototype.save = function() {
     console.log(this.base64());
@@ -301,16 +301,16 @@ SaveData.prototype.save = function() {
     });
 };
 SaveData.prototype.base64 = function() {
-    return btoa(this.metadata() + this.drawLog);
+    return btoa(this.metadata() + this.drawLog.join('|'));
 };
 SaveData.prototype.metadata = function() {
     var output = "";
     output += "z" + map.zoom + "|";
-    output += "c" + map.getCenter().toString();
+    output += "c" + map.getCenter().toString() + "|";
     return output;
 };
 SaveData.prototype.add = function(input) {
-    this.drawLog += input;
+    this.drawLog.push(input);
 };
 
 
