@@ -31,7 +31,7 @@ function constructPolyline(logstring) {
 
 
     for (var i = pointsLog.length - 2; i >= 0; i--) {
-        var currentPoint = pointsLog[i].split(', ');
+        var currentPoint = pointsLog[i].split(',');
         latlngs.push(new google.maps.LatLng(parseFloat(currentPoint[0]), parseFloat(currentPoint[1])));
     };
 
@@ -46,7 +46,7 @@ function constructPolyline(logstring) {
 }
 
 function constructMarker(logstring) {
-    var currentPoint = logstring.replace('m', '').replace(/\(/g, '').replace(/\)/g, '').split(', ')
+    var currentPoint = logstring.replace('m', '').replace(/\(/g, '').replace(/\)/g, '').split(',')
 
     var latlngs = new google.maps.MVCArray();
     latlngs.push(new google.maps.LatLng(parseFloat(currentPoint[0]), parseFloat(currentPoint[1])));
