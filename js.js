@@ -987,7 +987,7 @@ SaveData.prototype.save = function() {
     });
 };
 SaveData.prototype.base64 = function() {
-    return btoa(LZString.compressToBase64(this.metadata() + this.drawLog.join('|')));
+    return LZString.compressToBase64(this.metadata() + this.drawLog.join('|'));
 };
 SaveData.prototype.metadata = function() {
     var output = "";
