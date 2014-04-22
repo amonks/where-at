@@ -12,8 +12,8 @@ SaveData.prototype.save = function() {
     jQuery.urlShortener({
         longUrl: longUrl,
         success: function(shortUrl) {
-            console.log(shortUrl);
             alert(shortUrl);
+            console.log(shortUrl);
             window.location = shortUrl;
         },
         error: function(err) {
