@@ -4,7 +4,7 @@ var save = new SaveData;
 // constructor for save state
 
 function SaveData() {
-    this.drawLog = Array.new;
+    this.drawLog = [];
 };
 SaveData.prototype.save = function() {
     console.log(this.base64());
@@ -22,7 +22,7 @@ SaveData.prototype.save = function() {
     });
 };
 SaveData.prototype.base64 = function() {
-    return btoa(this.metadata() + this.drawLog.join('|'));
+    return btoa(this.metadata() + this.drawLog.join('|g'));
 };
 SaveData.prototype.metadata = function() {
     var output = "";
