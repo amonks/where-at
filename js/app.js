@@ -81,31 +81,26 @@ function initialize() {
 
 
 
+    // if (navigator.geolocation) {
+    //     navigator.geolocation.getCurrentPosition(function(position) {
+    //         var pos = new google.maps.LatLng(position.coords.latitude,
+    //             position.coords.longitude);
 
-    // Try HTML5 geolocation
-    if (getQueryString !== null) {
-        load();
-    } else {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                var pos = new google.maps.LatLng(position.coords.latitude,
-                    position.coords.longitude);
+    //         // var infowindow = new google.maps.InfoWindow({
+    //         //     map: map,
+    //         //     position: pos,
+    //         //     content: 'Location found using HTML5.'
+    //         // });
 
-                // var infowindow = new google.maps.InfoWindow({
-                //     map: map,
-                //     position: pos,
-                //     content: 'Location found using HTML5.'
-                // });
+    //         map.setCenter(pos);
+    //     }, function() {
+    //         handleNoGeolocation(true);
+    //     });
+    // } else {
+    //     // Browser doesn't support Geolocation
+    //     handleNoGeolocation(false);
+    // }
 
-                map.setCenter(pos);
-            }, function() {
-                handleNoGeolocation(true);
-            });
-        } else {
-            // Browser doesn't support Geolocation
-            handleNoGeolocation(false);
-        }
-    }
 
 
 
@@ -163,6 +158,20 @@ function initialize() {
 
     });
 
+
+    // create save control div
+
+    // Create the DIV to hold the control and
+    // call the SaveControl() constructor passing
+    // in this DIV.
+    var saveControlDiv = document.createElement('div');
+    var saveControl = new SaveControl(saveControlDiv, map);
+
+    saveControlDiv.index = 1;
+    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(saveControlDiv);
+
+
+
     // Bias the SearchBox results towards places that are within the bounds of the
     // current map's viewport.
     google.maps.event.addListener(map, 'bounds_changed', function() {
@@ -170,6 +179,12 @@ function initialize() {
         searchBox.setBounds(bounds);
     });
 
+    var options = {
+        map: map,
+        position: new google.maps.LatLng(41.880454799999995, -87.6251393),
+    };
+
+    map.setCenter(options.position);
 
     load();
 
@@ -182,24 +197,24 @@ function initialize() {
 
 
 
-// automatically center on current location
+// // automatically center on current location
 
-function handleNoGeolocation(errorFlag) {
-    if (errorFlag) {
-        var content = 'Error: Couldn\'t find your location.';
-    } else {
-        var content = 'Error: Your browser doesn\'t support geolocation.';
-    }
+// function handleNoGeolocation(errorFlag) {
+//     if (errorFlag) {
+//         var content = 'Error: Couldn\'t find your location.';
+//     } else {
+//         var content = 'Error: Your browser doesn\'t support geolocation.';
+//     }
 
-    var options = {
-        map: map,
-        position: new google.maps.LatLng(41.880454799999995, -87.6251393),
-        content: content
-    };
+//     var options = {
+//         map: map,
+//         position: new google.maps.LatLng(41.880454799999995, -87.6251393),
+//         content: content
+//     };
 
-    var infowindow = new google.maps.InfoWindow(options);
-    map.setCenter(options.position);
-}
+//     var infowindow = new google.maps.InfoWindow(options);
+//     map.setCenter(options.position);
+// }
 
 
 // function to return a random hex color
@@ -236,6 +251,10 @@ function saveImage() {
 
 function SaveData() {
     this.drawLog = "";
+};
+SaveData.prototype.save = function() {
+    console.log(this.base64());
+    window.location = window.location.href.split('?')[0] + "?" + this.base64();
 };
 SaveData.prototype.base64 = function() {
     return btoa(this.metadata() + this.drawLog);
@@ -375,14 +394,54 @@ function load() {
                 constructCenter(overlayArray[i])
             }
             if (overlayArray[i].indexOf("polyline") !== -1) {
-                constructPolyline(overlayArray[i])
-            }
-            if (overlayArray[i].indexOf("polyline") !== -1) {
-                constructPolyline(overlayArray[i])
+                constructPolyline(overlayArray[i]);
+                save.add(overlayArray[i]);
             }
             if (overlayArray[i].indexOf("marker") !== -1) {
                 constructMarker(overlayArray[i]);
+                save.add(overlayArray[i]);
             }
         };
     };
+}
+
+
+
+
+/**
+ * The SaveControl adds a control to the map that saves the current save state
+ */
+
+function SaveControl(controlDiv, map) {
+
+    // Set CSS styles for the DIV containing the control
+    // Setting padding to 5 px will offset the control
+    // from the edge of the map
+    controlDiv.style.padding = '5px';
+
+    // Set CSS for the control border
+    var controlUI = document.createElement('div');
+    controlUI.style.backgroundColor = 'white';
+    controlUI.style.borderStyle = 'solid';
+    controlUI.style.borderWidth = '2px';
+    controlUI.style.cursor = 'pointer';
+    controlUI.style.textAlign = 'center';
+    controlUI.title = 'Click to set the map to Home';
+    controlDiv.appendChild(controlUI);
+
+    // Set CSS for the control interior
+    var controlText = document.createElement('div');
+    controlText.style.fontFamily = 'Arial,sans-serif';
+    controlText.style.fontSize = '12px';
+    controlText.style.paddingLeft = '4px';
+    controlText.style.paddingRight = '4px';
+    controlText.innerHTML = '<b>Share</b>';
+    controlUI.appendChild(controlText);
+
+    // Setup the click event listeners: simply set the map to
+    // Chicago
+    google.maps.event.addDomListener(controlUI, 'click', function() {
+        save.save();
+    });
+
 }
