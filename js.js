@@ -220,17 +220,17 @@ function load() {
     if (getQueryString() !== null) {
         var overlayArray = getOverlayArray();
         for (var i = overlayArray.length - 1; i >= 0; i--) {
-            if (overlayArray[i].indexOf("zoom") !== -1) {
+            if (overlayArray[i].indexOf("z") !== -1) {
                 constructZoom(overlayArray[i])
             }
-            if (overlayArray[i].indexOf("center") !== -1) {
+            if (overlayArray[i].indexOf("c") !== -1) {
                 constructCenter(overlayArray[i])
             }
-            if (overlayArray[i].indexOf("polyline") !== -1) {
+            if (overlayArray[i].indexOf("p") !== -1) {
                 constructPolyline(overlayArray[i]);
                 save.add(overlayArray[i]);
             }
-            if (overlayArray[i].indexOf("marker") !== -1) {
+            if (overlayArray[i].indexOf("m") !== -1) {
                 constructMarker(overlayArray[i]);
                 save.add(overlayArray[i]);
             }
