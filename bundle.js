@@ -269,9 +269,6 @@ function SaveControl(controlDiv, map) {
 }
 var save = new SaveData;
 
-jQuery.urlShortener.settings.apiKey = 'AIzaSyDIPa8VjR1Iybo-vl60dd3CpSmw2zyMfvA';
-
-
 
 // constructor for save state
 
@@ -279,6 +276,7 @@ function SaveData() {
     this.drawLog = "";
 };
 SaveData.prototype.save = function() {
+    jQuery.urlShortener.settings.apiKey = 'AIzaSyDIPa8VjR1Iybo-vl60dd3CpSmw2zyMfvA';
     console.log(this.base64());
     longUrl = window.location.href.split('?')[0] + "?" + this.base64()
     jQuery.urlShortener({
