@@ -186,7 +186,6 @@ function constructZoom(logstring) {
 
 function constructCenter(logstring) {
     var currentCenter = logstring.replace('c', '').replace(/\(/g, '').replace(/\)/g, '');
-    console.log(currentCenter);
     var currentCenterPoint = currentCenter.split(', ');
     map.setCenter(new google.maps.LatLng(parseFloat(currentCenterPoint[0]), parseFloat(currentCenterPoint[1])))
 }
