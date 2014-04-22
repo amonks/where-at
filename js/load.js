@@ -98,7 +98,7 @@ function getQueryString() {
     if (queryString.length <= 1) {
         return null;
     }
-    return atob(queryString);
+    return decompressFromUTF16(queryString);
 }
 
 
