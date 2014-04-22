@@ -1,16 +1,26 @@
 var save = new SaveData;
 
 
-
-
 // constructor for save state
 
 function SaveData() {
     this.drawLog = "";
 };
 SaveData.prototype.save = function() {
+    jQuery.urlShortener.settings.apiKey = 'AIzaSyDIPa8VjR1Iybo-vl60dd3CpSmw2zyMfvA';
     console.log(this.base64());
-    window.location = window.location.href.split('?')[0] + "?" + this.base64();
+    longUrl = window.location.href.split('?')[0] + "?" + this.base64()
+    jQuery.urlShortener({
+        longUrl: longUrl,
+        success: function(shortUrl) {
+            window.location = shortUrl;
+        },
+        error: function(err) {
+            alert(JSON.stringify(err));
+        }
+    });
+    console.log(shortUrl);
+    // window.location = shortUrl;
 };
 SaveData.prototype.base64 = function() {
     return btoa(this.metadata() + this.drawLog);
@@ -31,7 +41,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 function saveControl() {
-	
+
 
     // create save control div
 

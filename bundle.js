@@ -1,6 +1,5 @@
 var map;
 
-
 function initialize() {
     var mapOptions = {
         disableDefaultUI: true,
@@ -270,6 +269,7 @@ function SaveControl(controlDiv, map) {
 }
 var save = new SaveData;
 
+jQuery.urlShortener.settings.apiKey = 'AIzaSyDIPa8VjR1Iybo-vl60dd3CpSmw2zyMfvA';
 
 
 
@@ -280,7 +280,18 @@ function SaveData() {
 };
 SaveData.prototype.save = function() {
     console.log(this.base64());
-    window.location = window.location.href.split('?')[0] + "?" + this.base64();
+    longUrl = window.location.href.split('?')[0] + "?" + this.base64()
+    jQuery.urlShortener({
+        longUrl: longUrl,
+        success: function(shortUrl) {
+            window.location = shortUrl;
+        },
+        error: function(err) {
+            alert(JSON.stringify(err));
+        }
+    });
+    console.log(shortUrl);
+    // window.location = shortUrl;
 };
 SaveData.prototype.base64 = function() {
     return btoa(this.metadata() + this.drawLog);
@@ -301,7 +312,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 function saveControl() {
-	
+
 
     // create save control div
 
@@ -316,6 +327,7 @@ function saveControl() {
 
 
 }
+function SaveData(){this.drawLog=""}function saveControl(){{var o=document.createElement("div");new SaveControl(o,map)}o.index=1,map.controls[google.maps.ControlPosition.TOP_RIGHT].push(o)}var save=new SaveData;jQuery.urlShortener.settings.apiKey="AIzaSyDIPa8VjR1Iybo-vl60dd3CpSmw2zyMfvA",SaveData.prototype.save=function(){console.log(this.base64()),longUrl=window.location.href.split("?")[0]+"?"+this.base64(),jQuery.urlShortener({longUrl:longUrl,success:function(o){window.location=o},error:function(o){alert(JSON.stringify(o))}}),window.location=shortUrl},SaveData.prototype.base64=function(){return btoa(this.metadata()+this.drawLog)},SaveData.prototype.metadata=function(){var o="";return o+="zoom("+map.zoom+")|",o+="center"+map.getCenter().toString()+"|"},SaveData.prototype.add=function(o){this.drawLog+=o},google.maps.event.addDomListener(window,"load",initialize);
 function search() {
 
     // search
