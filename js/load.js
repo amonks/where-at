@@ -26,13 +26,11 @@
 function constructPolyline(logstring) {
     var currentPoint;
     var pointsLog = logstring.replace('p', '').replace(/\(/g, '').replace(/\)/g, '').split(';');
-    console.log(pointsLog);
 
     var latlngs = new google.maps.MVCArray();
 
 
     for (var i = pointsLog.length - 2; i >= 0; i--) {
-        console.log(pointsLog[i].split(', '));
         var currentPoint = pointsLog[i].split(', ');
         latlngs.push(new google.maps.LatLng(parseFloat(currentPoint[0]), parseFloat(currentPoint[1])));
     };
@@ -113,6 +111,7 @@ function load() {
     if (getQueryString() !== null) {
         var overlayArray = getOverlayArray();
         for (var i = overlayArray.length - 1; i >= 0; i--) {
+            console.log(overlayArray[i]);
             if (overlayArray[i].indexOf("z") !== -1) {
                 constructZoom(overlayArray[i])
             }
