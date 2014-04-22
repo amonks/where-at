@@ -226,11 +226,11 @@ function load() {
             }
             if (overlayArray[i].indexOf("p") !== -1) {
                 constructPolyline(overlayArray[i]);
-                save.add(overlayArray[i]);
+                save.add("|" + overlayArray[i]);
             }
             if (overlayArray[i].indexOf("m") !== -1) {
                 constructMarker(overlayArray[i]);
-                save.add(overlayArray[i]);
+                save.add("|" + overlayArray[i]);
             }
         };
     };
