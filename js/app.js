@@ -46,8 +46,6 @@ function initialize() {
         buttonLabelHtml: "Share"
     };
 
-    load();
-
     drawingManager.setMap(map);
 
     // var snapShotControl = new SnapShotControl(snapOpts);
@@ -85,24 +83,28 @@ function initialize() {
 
 
     // Try HTML5 geolocation
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = new google.maps.LatLng(position.coords.latitude,
-                position.coords.longitude);
-
-            // var infowindow = new google.maps.InfoWindow({
-            //     map: map,
-            //     position: pos,
-            //     content: 'Location found using HTML5.'
-            // });
-
-            map.setCenter(pos);
-        }, function() {
-            handleNoGeolocation(true);
-        });
+    if (getQueryString !== null) {
+        load();
     } else {
-        // Browser doesn't support Geolocation
-        handleNoGeolocation(false);
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = new google.maps.LatLng(position.coords.latitude,
+                    position.coords.longitude);
+
+                // var infowindow = new google.maps.InfoWindow({
+                //     map: map,
+                //     position: pos,
+                //     content: 'Location found using HTML5.'
+                // });
+
+                map.setCenter(pos);
+            }, function() {
+                handleNoGeolocation(true);
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            handleNoGeolocation(false);
+        }
     }
 
 
@@ -168,6 +170,10 @@ function initialize() {
         searchBox.setBounds(bounds);
     });
 
+
+    load();
+
+
 }
 
 
@@ -232,7 +238,13 @@ function SaveData() {
     this.drawLog = "";
 };
 SaveData.prototype.base64 = function() {
-    return btoa(this.drawLog);
+    return btoa(this.metadata() + this.drawLog);
+};
+SaveData.prototype.metadata = function() {
+    var output = "";
+    output += "zoom(" + map.zoom + ")|";
+    output += "center" + map.getCenter().toString() + "|";
+    return output;
 };
 SaveData.prototype.add = function(input) {
     this.drawLog += input;
@@ -317,6 +329,18 @@ function createMarker(opts) {
 }
 
 
+function constructZoom(logstring) {
+    var currentZoom = logstring.replace('zoom', '').replace(/\(/g, '').replace(/\)/g, '');
+    map.setZoom(parseInt(currentZoom));
+}
+
+function constructCenter(logstring) {
+    var currentCenter = logstring.replace('center', '').replace(/\(/g, '').replace(/\)/g, '');
+    console.log(currentCenter);
+    var currentCenterPoint = currentCenter.split(', ');
+    map.setCenter(new google.maps.LatLng(parseFloat(currentCenterPoint[0]), parseFloat(currentCenterPoint[1])))
+}
+
 
 
 
@@ -341,13 +365,24 @@ function getOverlayArray() {
 }
 
 function load() {
-    var overlayArray = getOverlayArray();
-    for (var i = overlayArray.length - 1; i >= 0; i--) {
-        if (overlayArray[i].indexOf("polyline") !== -1) {
-            constructPolyline(overlayArray[i])
-        }
-        if (overlayArray[i].indexOf("marker") !== -1) {
-            constructMarker(overlayArray[i]);
-        }
-    }; 
+    if (getQueryString() !== null) {
+        var overlayArray = getOverlayArray();
+        for (var i = overlayArray.length - 1; i >= 0; i--) {
+            if (overlayArray[i].indexOf("zoom") !== -1) {
+                constructZoom(overlayArray[i])
+            }
+            if (overlayArray[i].indexOf("center") !== -1) {
+                constructCenter(overlayArray[i])
+            }
+            if (overlayArray[i].indexOf("polyline") !== -1) {
+                constructPolyline(overlayArray[i])
+            }
+            if (overlayArray[i].indexOf("polyline") !== -1) {
+                constructPolyline(overlayArray[i])
+            }
+            if (overlayArray[i].indexOf("marker") !== -1) {
+                constructMarker(overlayArray[i]);
+            }
+        };
+    };
 }
