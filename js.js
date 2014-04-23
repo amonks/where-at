@@ -264,7 +264,7 @@ function getQueryString() {
 
 
 function getOverlayArray() {
-    return getQueryString().split('|');
+    return getQueryString().split(':');
 }
 
 function load() {
@@ -981,12 +981,12 @@ SaveData.prototype.save = function() {
     });
 };
 SaveData.prototype.base64 = function() {
-    return LZString.compressToBase64(this.metadata() + this.drawLog.join('|'));
+    return LZString.compressToBase64(this.metadata() + this.drawLog.join(':'));
 };
 SaveData.prototype.metadata = function() {
     var output = "";
-    output += "z" + map.zoom + "|";
-    output += "c" + map.getCenter().toString() + "|";
+    output += "z" + map.zoom + ":";
+    output += "c" + map.getCenter().toString() + ":";
     output = output.replace(/\(/g, '').replace(/\)/g, '').replace(' ', '');
     return output;
 };

@@ -99,7 +99,7 @@ function getQueryString() {
 
 
 function getOverlayArray() {
-    return getQueryString().split('|');
+    return getQueryString().split(':');
 }
 
 function load() {
