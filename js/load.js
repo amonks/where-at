@@ -30,7 +30,7 @@ function constructPolyline(logstring) {
 
     var decodedPath = google.maps.geometry.encoding.decodePath(logstring);
 
-    console.log(decodedPath.toString);
+    console.log(decodedPath.toString());
 
     var line = new google.maps.Polyline({
         path: decodedPath,
