@@ -191,7 +191,7 @@ function draw() {
 function constructPolyline(logstring) {
     logstring.replace(/^p/g, '');
 
-    var latlngs = decodePath(logstring);
+    var latlngs = google.maps.geometry.encoding.decodePath(logstring);
 
     var line = new google.maps.Polyline({
         path: latlngs,
