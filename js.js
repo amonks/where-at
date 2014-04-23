@@ -270,6 +270,7 @@ function getOverlayArray() {
 function load() {
     if (getQueryString() !== null) {
         var overlayArray = getOverlayArray();
+        console.log(overlayArray);
         for (var i = overlayArray.length - 1; i >= 0; i--) {
             console.log(overlayArray[i]);
             if (overlayArray[i].indexOf("z") !== -1) {
