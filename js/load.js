@@ -24,7 +24,7 @@
 
 
 function constructPolyline(logstring) {
-    logstring.replace(/^p/g, '');
+    logstring = logstring.replace(/^p/g, '');
 
     var latlngs = google.maps.geometry.encoding.decodePath(logstring);
 
