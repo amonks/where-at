@@ -24,17 +24,9 @@
 
 
 function constructPolyline(logstring) {
-    var currentPoint;
-    var pointsLog = logstring.replace('p', '').replace(/\(/g, '').replace(/\)/g, '').split(';');
+    logstring.replace(/^p/g, '');
 
-    var latlngs = new google.maps.MVCArray();
-
-
-    for (var i = pointsLog.length - 2; i >= 0; i--) {
-        var currentPoint = pointsLog[i].split(',');
-        latlngs.push(new google.maps.LatLng(parseFloat(currentPoint[0]), parseFloat(currentPoint[1])));
-    };
-
+    var latlngs = decodePath(logstring);
 
     var line = new google.maps.Polyline({
         path: latlngs,
