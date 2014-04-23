@@ -108,17 +108,17 @@ function load() {
         console.log(overlayArray);
         for (var i = overlayArray.length - 1; i >= 0; i--) {
             console.log(overlayArray[i]);
-            if (overlayArray[i].indexOf("z") !== -1) {
+            if (overlayArray[i].indexOf("z") == 0) {
                 constructZoom(overlayArray[i])
             }
-            if (overlayArray[i].indexOf("c") !== -1) {
+            if (overlayArray[i].indexOf("c") == 0) {
                 constructCenter(overlayArray[i])
             }
-            if (overlayArray[i].indexOf("p") !== -1) {
+            if (overlayArray[i].indexOf("p") == 0) {
                 constructPolyline(overlayArray[i]);
                 save.add(overlayArray[i]);
             }
-            if (overlayArray[i].indexOf("m") !== -1) {
+            if (overlayArray[i].indexOf("m") == 0) {
                 constructMarker(overlayArray[i]);
                 save.add(overlayArray[i]);
             }
