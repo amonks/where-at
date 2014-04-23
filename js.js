@@ -191,10 +191,14 @@ function draw() {
 function constructPolyline(logstring) {
     logstring = logstring.replace(/^p/g, '');
 
-    var latlngs = google.maps.geometry.encoding.decodePath(logstring);
+    console.log(logstring);
+
+    var decodedPath = google.maps.geometry.encoding.decodePath(logstring);
+
+    console.log(decodedPath.toString);
 
     var line = new google.maps.Polyline({
-        path: latlngs,
+        path: decodedPath,
         strokeColor: "#FF0000",
         strokeOpacity: 0.8,
         strokeWeight: 5,
@@ -236,7 +240,7 @@ function constructZoom(logstring) {
 
 function constructCenter(logstring) {
     var currentCenter = logstring.replace('c', '').replace(/\(/g, '').replace(/\)/g, '');
-    var currentCenterPoint = currentCenter.split(', ');
+    var currentCenterPoint = currentCenter.split(',');
     map.setCenter(new google.maps.LatLng(parseFloat(currentCenterPoint[0]), parseFloat(currentCenterPoint[1])))
 }
 
@@ -982,6 +986,7 @@ SaveData.prototype.metadata = function() {
     var output = "";
     output += "z" + map.zoom + "|";
     output += "c" + map.getCenter().toString() + "|";
+    output = output.replace(/\(/g, '').replace(/\)/g, '').replace(' ', '');
     return output;
 };
 SaveData.prototype.add = function(input) {

@@ -28,6 +28,7 @@ SaveData.prototype.metadata = function() {
     var output = "";
     output += "z" + map.zoom + "|";
     output += "c" + map.getCenter().toString() + "|";
+    output = output.replace(/\(/g, '').replace(/\)/g, '').replace(' ', '');
     return output;
 };
 SaveData.prototype.add = function(input) {
