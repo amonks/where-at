@@ -1,0 +1,909 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"forec",
+				"forecastIOKey"
+			],
+			[
+				"bottom",
+				"border-bottom"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"d3",
+				"d3data"
+			],
+			[
+				"add",
+				"add_lifespans_to_stations"
+			],
+			[
+				"olds",
+				"oldskoola"
+			],
+			[
+				"to_",
+				"to_station_name"
+			],
+			[
+				"trips",
+				"trips"
+			],
+			[
+				"remove",
+				"remove_stopwords_from_array"
+			],
+			[
+				"stop",
+				"stopwords"
+			],
+			[
+				"int",
+				"intersection_arrays"
+			],
+			[
+				"artist",
+				"artist_key"
+			],
+			[
+				"artists",
+				"artists_objects_array"
+			],
+			[
+				"shuffle",
+				"shuffle_array"
+			],
+			[
+				"image",
+				"imageLink"
+			],
+			[
+				"check",
+				"check_for_url"
+			],
+			[
+				"keyw",
+				"keywords_from_text"
+			],
+			[
+				"get",
+				"get_selected_text"
+			],
+			[
+				"text",
+				"text_to_doge_text"
+			],
+			[
+				"is",
+				"is_a_verb"
+			],
+			[
+				"old",
+				"oldskoola"
+			],
+			[
+				"pix",
+				"pixasticJSCode"
+			],
+			[
+				"u",
+				"u"
+			],
+			[
+				"d",
+				"d"
+			],
+			[
+				"gall",
+				"gallery_id"
+			],
+			[
+				"ic",
+				"icalGen"
+			],
+			[
+				"this",
+				"thisClass"
+			],
+			[
+				"String",
+				"String"
+			],
+			[
+				"periodicC",
+				"periodicCounter"
+			],
+			[
+				"period",
+				"periodicIncrement"
+			],
+			[
+				"periodic",
+				"periodicCounter"
+			],
+			[
+				"per",
+				"periodicIncrement"
+			],
+			[
+				"y",
+				"y"
+			],
+			[
+				"M",
+				"MeshNormalMaterial"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"ind",
+				"text-indent"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"sub_",
+				"sub_sub_category_b"
+			],
+			[
+				"root",
+				"root_children_each"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app.rb",
+			"settings":
+			{
+				"buffer_size": 908,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config.ru",
+			"settings":
+			{
+				"buffer_size": 40,
+				"line_ending": "Unix",
+				"name": "require './app'"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 159.0,
+		"selected_items":
+		[
+			[
+				"project",
+				"Project: Save As"
+			],
+			[
+				"markd",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"md",
+				"Minify::Default File Settings"
+			],
+			[
+				"togg",
+				"SolarizedToggle: Toggle"
+			],
+			[
+				"sola",
+				"SolarizedToggle: Toggle"
+			],
+			[
+				"toggle",
+				"SolarizedToggle: Toggle"
+			],
+			[
+				"mini",
+				"Minify::Default File Settings"
+			],
+			[
+				"pret",
+				"HTMLPrettify"
+			],
+			[
+				"prett",
+				"HTMLPrettify"
+			],
+			[
+				"min",
+				"Minify::Minify File"
+			],
+			[
+				"minif",
+				"Minify::Minify File"
+			],
+			[
+				"pretti",
+				"HTMLPrettify"
+			],
+			[
+				"pre",
+				"HTMLPrettify"
+			],
+			[
+				"pretty",
+				"HTMLPrettify"
+			],
+			[
+				"build",
+				"Build: Build"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"haml",
+				"Set Syntax: Ruby Haml"
+			],
+			[
+				"ruby",
+				"Set Syntax: Ruby"
+			],
+			[
+				"minify",
+				"Minify::Minify File"
+			],
+			[
+				"snippet",
+				"Snippet: html"
+			],
+			[
+				"html",
+				"Set Syntax: HTML5"
+			],
+			[
+				"mi",
+				"Minify::Minify File"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"multi",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"package",
+				"Package Control: Disable Package"
+			],
+			[
+				"markdown",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"solarized",
+				"SolarizedToggle: Toggle"
+			],
+			[
+				"repl",
+				"SublimeREPL: Ruby"
+			],
+			[
+				"sublimerepl:rub",
+				"SublimeREPL: Ruby"
+			],
+			[
+				"word wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"repl ruby",
+				"SublimeREPL: Ruby"
+			],
+			[
+				"irb",
+				"SublimeREPL: Ruby IRB (deprecated)"
+			],
+			[
+				"html	",
+				"Snippet: html"
+			],
+			[
+				"html ",
+				"Snippet: html"
+			],
+			[
+				"javascri",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ru",
+				"Set Syntax: Ruby"
+			],
+			[
+				"numb",
+				"Emmet: Decrement Number by 1"
+			],
+			[
+				"mar",
+				"Set Syntax: Markdown"
+			],
+			[
+				"run",
+				"Build: Run sketch fullscreen"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"beaut",
+				"Beautify::Beautify File"
+			],
+			[
+				"bea",
+				"Beautify::Beautify File"
+			],
+			[
+				"minify ",
+				"Minify Javascript to file"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"htmlp",
+				"HTMLPrettify"
+			],
+			[
+				"jek",
+				"Jekyll: New Post"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"yaml",
+				"Set Syntax: YAML"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"javascript",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"process",
+				"Set Syntax: Processing"
+			],
+			[
+				"ham",
+				"Set Syntax: Ruby Haml"
+			],
+			[
+				"prettify",
+				"HTMLPrettify"
+			],
+			[
+				"package control",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"entity",
+				"Package Control: Add Repository"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 435.0
+	},
+	"console":
+	{
+		"height": 272.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/ajm/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/ajm/Library/Application Support/Sublime Text 3/Packages/Minify/Minify.sublime-settings",
+		"/Users/ajm/Dropbox/Sites/belgianman.com/index.html",
+		"/Users/ajm/Library/Application Support/Sublime Text 3/Packages/User/SolarizedToggle.sublime-settings",
+		"/Users/ajm/Library/Application Support/Sublime Text 3/Packages/Solarized Toggle/SolarizedToggle.sublime-settings",
+		"/Users/ajm/Dropbox/Desktop/# homework 3 : Andrew Monks.mdown",
+		"/Users/ajm/Dropbox/Desktop/mapdash/js/html2canvas.min.js",
+		"/Users/ajm/Dropbox/Desktop/mapdash/js/app.min.js",
+		"/Users/ajm/Dropbox/Desktop/mapdash/css/style.css",
+		"/Users/ajm/Dropbox/Desktop/mapnote/painter.js",
+		"/Users/ajm/Dropbox/Desktop/mapdash/js/app.js",
+		"/Users/ajm/Dropbox/Desktop/mapdash/simple.html",
+		"/Users/ajm/Dropbox/Desktop/mapdash/js/app.old.js",
+		"/Users/ajm/Dropbox/Desktop/mapdash/css/style.min.css",
+		"/Users/ajm/Dropbox/Desktop/mapdash/style/style.css",
+		"/Users/ajm/Dropbox/Desktop/mapdash/style/style.min.css",
+		"/Users/ajm/Dropbox/Work/2013 - raspberry pi/_posts/2013-12-7-view-image-in-terminal.md",
+		"/Users/ajm/Dropbox/Work/2013 - raspberry pi/_posts/2013-12-7-rpi-headless-images.md",
+		"/Users/ajm/Dropbox/Desktop/auto-album-visualizer/readme.md",
+		"/Users/ajm/Dropbox/Sites/monks.co/jquery.mmenu.all.css",
+		"/Users/ajm/Dropbox/Sites/monks.co/app.min.js",
+		"/Users/ajm/Dropbox/Desktop/bouncer/app.rb",
+		"/Users/ajm/Dropbox/Work/2014 - bouncer/bouncer/app.rb",
+		"/Users/ajm/Dropbox/Desktop/hmi assignment 2.md",
+		"/Users/ajm/Dropbox/Work/2014 - bouncer/bouncer/lib/bouncer.rb",
+		"/Users/ajm/Dropbox/Work/2014 - bouncer/bouncer/lib/bouncer.js",
+		"/Users/ajm/Downloads/foia/batch convert xls to csv.rb",
+		"/Users/ajm/Dropbox/Desktop/activeauth darpa.md",
+		"/Users/ajm/Dropbox/Desktop/batch convert xls to csv.rb",
+		"/Users/ajm/Dropbox/Desktop/active auth darpa",
+		"/Users/ajm/Library/Application Support/Sublime Text 3/Packages/User/SublimeWritingStyle.sublime-settings",
+		"/Users/ajm/Library/Application Support/Sublime Text 3/Packages/SublimeWritingStyle/SublimeWritingStyle.sublime-settings",
+		"/Users/ajm/Dropbox/Desktop/passive_loathing.pdf",
+		"/Users/ajm/Dropbox/Work/2013 - gallery directory/gallery-directory-app/app.rb",
+		"/Users/ajm/Library/Application Support/Sublime Text 3/Packages/User/SublimeREPL.sublime-settings",
+		"/Users/ajm/Library/Application Support/Sublime Text 3/Packages/SublimeREPL/SublimeREPL.sublime-settings",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/d3snippet.haml",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/map.haml",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/birthmap_info.md",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/deathmap_info.md",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/tripmap_info.md",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/jumpmap_info.md",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/navigation.haml",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/showhide.haml",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/stationmap_info.md",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/app.rb",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/info.haml",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/navigation.md",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/d3.haml",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/trips_per_bike.haml",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/readme.markdown",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/json/routes.json",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/station_timelines.haml",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/deaths_per_station.haml",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/births_per_station.haml",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/.gitignore",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/bike_timelines.haml",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/json/birthmap.json",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/trips_per_station.haml",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/views/deathmap.haml",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/json/deathmap.json",
+		"/Users/ajm/Dropbox/Work/2014 - doger/doger/js/doger.min.js",
+		"/Users/ajm/Dropbox/Work/2014 - doger/doger/js/doger.js",
+		"/Users/ajm/Dropbox/Work/2014 - oldskoola/oldskoola.min.js",
+		"/Users/ajm/Dropbox/Desktop/divvydivvy/readme.md",
+		"/Users/ajm/Dropbox/Desktop/divvy/readme.md",
+		"/Users/ajm/Dropbox/Desktop/divvy/views/readme.markdown",
+		"/Users/ajm/Dropbox/Desktop/divvy/views/bike_info.haml",
+		"/Users/ajm/Dropbox/Desktop/divvy/views/bike.haml",
+		"/Users/ajm/Dropbox/Desktop/divvy/make_bikes.rb",
+		"/Users/ajm/Downloads/Divvy_Stations_Trips_2013/index.html",
+		"/Users/ajm/Downloads/Divvy_Stations_Trips_2013/ stations.json",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/_includes/logout.html",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/_includes/login.html",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/_layouts/artist_page.html",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/app.js",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/artists/index.html",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/_includes/nav_and_logo.html",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/_includes/head.html",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/_plugins/make_artist_pages.rb",
+		"/Users/ajm/Dropbox/Work/2014 - hip hop analysis/jayz-nas.md",
+		"/Users/ajm/Dropbox/Work/2014 - hip hop analysis/respiration.md",
+		"/Users/ajm/Dropbox/Work/2014 - hip hop analysis/goldsoultheory.md",
+		"/Users/ajm/Dropbox/Work/2014 - hip hop analysis/followtheleader.md",
+		"/Users/ajm/Dropbox/Work/2014 - hip hop analysis/straightouttacompton.md",
+		"/Users/ajm/Dropbox/Desktop/N.W.A.- STRAIGHT OUTTA COMPTON.md",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/index.html",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/style.css",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/package.json",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/videos/index.html",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/releases/index.html",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/_includes/edit_video_form.html",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/_includes/new_artist_form.html",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/Gruntfile.js",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/_includes/edit_release_form.html",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/_includes/new_release_form.html",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/_includes/new_video_form.html",
+		"/Users/ajm/Dropbox/Desktop/untitled folder 2/thundercat/_includes/edit_artist_form.html",
+		"/var/folders/q4/5z00ldn946312pxzrwxygvvw0000gn/T/Google Chrome - Leaftype 014.txt",
+		"/Users/ajm/Dropbox/Desktop/thundercat/releases/index.html",
+		"/Users/ajm/Dropbox/Desktop/thundercat/_includes/nav_and_logo.html",
+		"/Users/ajm/Dropbox/Desktop/thundercat/_includes/head.html",
+		"/Users/ajm/Dropbox/Desktop/thundercat/videos/index.html",
+		"/Users/ajm/Dropbox/Desktop/thundercat/index.html",
+		"/Users/ajm/Dropbox/Desktop/thundercat/_layouts/artist_page.html",
+		"/Users/ajm/Dropbox/Desktop/thundercat/_plugins/make_artist_pages.rb",
+		"/Users/ajm/Dropbox/Desktop/thundercat/make_artist_pages.rb",
+		"/Users/ajm/Dropbox/Desktop/human machine interaction.mdown",
+		"/Users/ajm/Dropbox/Desktop/thundercat/js/controllers.js",
+		"/Users/ajm/Dropbox/Desktop/ctadailyridership/ctadailyridership-circles.pde",
+		"/Users/ajm/Dropbox/Desktop/doger/embed.html",
+		"/Users/ajm/Dropbox/Desktop/doger/image.html",
+		"/Users/ajm/Dropbox/Desktop/doger/index.html",
+		"/Users/ajm/Dropbox/Desktop/doger/test.html",
+		"/Users/ajm/Dropbox/Desktop/doger/js/bookmarklet.js",
+		"/Users/ajm/Dropbox/Desktop/doger/js/bookmarklet.min.js",
+		"/Users/ajm/Dropbox/Desktop/doger/doger.js",
+		"/Users/ajm/Dropbox/Desktop/doger/doger.min.js",
+		"/Users/ajm/Dropbox/Desktop/doger/doger_test.js",
+		"/Users/ajm/Dropbox/Desktop/doger/test_coverage.md",
+		"/Users/ajm/Dropbox/Desktop/doger/bookmarklet.min.js",
+		"/Users/ajm/Dropbox/Desktop/doger/doger_test.min.js",
+		"/Users/ajm/Library/Application Support/Sublime Text 3/Packages/User/Minify.sublime-settings",
+		"/Users/ajm/Dropbox/Desktop/doger/README.md",
+		"/Users/ajm/Dropbox/Desktop/doger/doger.beautified.js",
+		"/Users/ajm/Dropbox/Desktop/doger/bookmarklet.js",
+		"/Users/ajm/Dropbox/Work/2014 - algorithms + ai/doger/README.md",
+		"/Users/ajm/Dropbox/Work/2014 - algorithms + ai/doger/doger.js"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"proxyurl",
+			"Parse",
+			"snaps",
+			"drawing",
+			"click",
+			"buttonlabelhtml",
+			"path",
+			"marker",
+			"canvas",
+			"HomeControl",
+			"homeControl",
+			"homecontrol",
+			"output",
+			"output +=",
+			"var output = (",
+			"console.log",
+			"mapDraw",
+			"console.log",
+			"polygon",
+			"poly",
+			"path",
+			"strokeweight",
+			"newpolyline",
+			"initialize",
+			"poly",
+			"info",
+			"instance",
+			"bgcol\\=[0-9a-f]{6}\\/linkcol\\=[0-9a-f]{6}\\/",
+			"bgcol\\=[0-9]*\\/linkcol\\=[0-9]*\\/",
+			"[",
+			"Doger",
+			"youtubeMetadata",
+			"var",
+			"happy\", \"de",
+			"reasmb",
+			"depressed",
+			"myself",
+			"data",
+			"log",
+			"function ",
+			"data-bttrlazyloading-sm-src",
+			"()",
+			"#navigation",
+			"#navi",
+			"app",
+			";",
+			"\"summary",
+			"pt>",
+			"$(",
+			"art of data",
+			"netcam",
+			"4-3",
+			"16by9",
+			"player.",
+			"sixteen",
+			"16-9",
+			"noprint aspect",
+			" aspect",
+			" aspect ",
+			"netcam",
+			" aspect ",
+			"apsect",
+			"aspect",
+			"aspect ",
+			"aspect\"",
+			"aspect",
+			"player.",
+			"aspect",
+			"apsect",
+			"vimeo\"",
+			"player",
+			"player.",
+			"player",
+			"player.",
+			"vimeo",
+			"yung",
+			", ",
+			"	",
+			", phase [0-9]",
+			"chart",
+			"trip_count",
+			"trip",
+			"justified",
+			".btn-group-justified",
+			"%a",
+			"%li",
+			"%p",
+			"thing",
+			"yLabel",
+			"maxy",
+			"labelY",
+			"labelX",
+			"thing",
+			"@title",
+			"lng",
+			"@stations = Station.all(:order => [:trip_count",
+			"@stations += \"",
+			",}",
+			"\"birth_count\"",
+			"\"death_count\":[0-9]*,",
+			"lng",
+			"lat",
+			"lng",
+			"death_count",
+			"\"birth_count\":[0-9]*,",
+			"lat",
+			"longitude",
+			"latitude",
+			"\"dpcapacity\":[a-zA-Z0-9\\.\\s\\&\\\"\\:\\-]*",
+			"\"death_bike_id\":[a-zA-Z0-9\\.\\s\\&\\\"\\:\\-]*,",
+			"\"birth_bike_id\":[a-zA-Z0-9\\.\\s\\&\\\"\\:\\-]*,",
+			"\"birth_time\":[a-zA-Z0-9\\.\\s\\&\\\"\\:\\-]*,",
+			"\"death_time\":[a-zA-Z0-9\\.\\s\\&\\\"\\:\\-]*,",
+			"\"name\":[a-zA-Z0-9\\.\\s\\&\\\"]*,",
+			"\"death_rate\":[a-z0-9\\.]*,",
+			"\"death_trip_id\":[a-z0-9]*,",
+			"\"birth_trip_id\":[a-z0-9]*,",
+			"\"dbcapacity\":[a-z0-9]*,",
+			"\"lifespan\":[a-z0-9]*,",
+			"\"died_early\":[a-z]*,",
+			"\"trip_count\":[0-9]*,",
+			"\"station_id\":[0-9]*,",
+			"\"station_id\":[0-9]*,\"trip_count\":[0-9]*,\"birth_trip_id\":[0-9]*,\"death_trip_id\":[0-9]*,\"birth_time\":\"[a-zA-Z0-9\\ ]*\",\"death_time\":\"[a-zA-Z0-9\\ ]*\",\"birth_bike_id\":\"[0-9]*\",\"death_bike_id\":\"[0-9]*\",\"name\":\"[a-zA-Z0-9\\ ]*\",\"died_early\":[a-z]*,\"birth_count\":[0-9]*,",
+			"\"station_id\":[0-9]*,\"trip_count\":[0-9]*,\"birth_trip_id\":[0-9]*,\"death_trip_id\":[0-9]*,\"birth_time\":\"[a-zA-Z0-9\\s]*\",\"death_time\":\"[a-zA-Z0-9\\s]*\",\"birth_bike_id\":\"[0-9]*\",\"death_bike_id\":\"[0-9]*\",\"name\":\"[a-zA-Z0-9\\s]*\",\"died_early\":[a-z]*,\"birth_count\":[0-9]*,",
+			"\"station_id\":[0-9]*,\"trip_count\":[0-9]*,\"birth_trip_id\":[0-9]*,\"death_trip_id\":[0-9]*,\"birth_time\":\"[\\s\\w]*\",\"death_time\":\"[\\s\\w]*\",\"birth_bike_id\":\"[0-9]*\",\"death_bike_id\":\"[0-9]*\",\"name\":\"[\\s\\w]*\",\"died_early\":[a-z]*,\"birth_count\":[0-9]*,",
+			"\"lng",
+			"\"lat",
+			"\"[0-9]{1,3}\":"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"bgcol=ffffff/linkcol=000000/",
+			"},",
+			"js/doger.min.js",
+			"http://doge.needsyourhelp.org",
+			"176284277",
+			"group: raspberry-pi",
+			"/rpi-setup/src/",
+			"silhouette"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 908,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								329,
+								329
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "config.ru",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 40,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"auto_name": "require './app'",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "where.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"eli",
+				"elizadata.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 185.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
