@@ -9,10 +9,10 @@ function infoControl() {
     // call the InfoControl() constructor passing
     // in this DIV.
     var infoControlDiv = document.createElement('div');
-    var infoControl = new InfoControl(InfoControlDiv, map);
+    var infoControl = new InfoControl(infoControlDiv, map);
 
     infoControlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(InfoControlDiv);
+    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(infoControlDiv);
 
 
 }
