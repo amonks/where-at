@@ -37,6 +37,7 @@ function initialize() {
     search();
 
 
+    infoControl();
     saveControl();
     saveAsControl();
     clearControl();
