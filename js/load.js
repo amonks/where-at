@@ -68,6 +68,18 @@ function createMarker(opts) {
 }
 
 
+function constructType(logstring) {
+    switch (logstring) {
+        case "th":
+            map.setMapTypeId(google.maps.MapTypeId.HYBRID);
+            break;
+        case "tr":
+            map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+            break;
+    }
+}
+
+
 function constructZoom(logstring) {
     var currentZoom = logstring.replace('z', '').replace(/\(/g, '').replace(/\)/g, '');
     map.setZoom(parseInt(currentZoom));
@@ -115,6 +127,9 @@ function load() {
         console.log(overlayArray);
         for (var i = overlayArray.length - 1; i >= 0; i--) {
             console.log(overlayArray[i]);
+            if (overlayArray[i].indexOf("t") == 0) {
+                constructType(overlayArray[i])
+            }
             if (overlayArray[i].indexOf("z") == 0) {
                 constructZoom(overlayArray[i])
             }

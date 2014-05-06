@@ -48,7 +48,7 @@ function ClearControl(controlDiv, map) {
     controlText.style.fontSize = '12px';
     controlText.style.paddingLeft = '4px';
     controlText.style.paddingRight = '4px';
-    controlText.innerHTML = '<b>New</b>';
+    controlText.innerHTML = '<b>Clear</b>';
     controlUI.appendChild(controlText);
 
     // Setup the click event listeners: simply set the map to

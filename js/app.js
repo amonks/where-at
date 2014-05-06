@@ -1,14 +1,23 @@
 var map;
 
+
 function initialize() {
+    vex.defaultOptions.className = 'vex-theme-plain';
+
+    vex.dialog.alert($("#readme").html())
+
     var mapOptions = {
         disableDefaultUI: true,
         panControl: false,
-        zoomControl: false,
+        zoomControl: true,
         zoom: 10,
-        mapTypeControl: false,
+        mapTypeControl: true,
         mapTypeControlOptions: {
-            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+            mapTypeIds: [
+                google.maps.MapTypeId.ROADMAP, 
+                google.maps.MapTypeId.HYBRID, 
+            ],
         },
     };
     
@@ -26,6 +35,7 @@ function initialize() {
 
 
     saveControl();
+    saveAsControl();
     clearControl();
 
 
@@ -34,7 +44,6 @@ function initialize() {
         position: new google.maps.LatLng(41.880454799999995, -87.6251393),
     };
     map.setCenter(options.position);
-
 
     load();
 

@@ -5,8 +5,8 @@ require 'bundler'
 require 'date'
 Bundler.require
 
-DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_TEAL_URL'])
-# DataMapper.setup(:default, "postgres://localhost:5432/mapz")
+# DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_TEAL_URL'])
+DataMapper.setup(:default, "postgres://localhost:5432/mapz")
 
 # Define a simple DataMapper model.
 class Map
@@ -29,19 +29,27 @@ DataMapper.auto_upgrade!
 
 
 get '/' do
+  @readme = markdown :readme
   haml :map
 end
 
 get '/map/:map_id' do
+  @readme = markdown :readme
   @map = Map.get(params[:map_id])
-  puts @map
   @data = @map.data
   haml :map
 end
 
-post '/map/new' do
+post '/' do
   @data = params['data']
   @map = Map.create(:data => @data, :creation_date => Time.now)
+  halt 200, @map.map_id.to_s
+end
+
+post '/map/:map_id' do
+  @map = Map.get(params[:map_id])
+  @data = params['data']
+  @map.update(:data => @data, :update_date => Time.now)
   halt 200, @map.map_id.to_s
 end
 

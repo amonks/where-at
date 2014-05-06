@@ -21,17 +21,30 @@ function SaveData() {
 //         }
 //     });
 // };
-SaveData.prototype.save = function() {
+SaveData.prototype.saveAs = function() {
     console.log(this.base64());
     var dataOutput = this.base64()
     $.post(
-        "/map/new",
+        "/",
         {data: dataOutput},
         function(data,status){
             console.log(data);
             console.log(status);
-            window.location = window.location.href.split('/')[0] + "/map/" + data;
-            // alert(window.location.href.split('/')[0] + "/map/" + data);
+            window.history.pushState('Object', 'Title', "/map/" + data);
+            vex.dialog.alert("<p>Saved Successfully!</p><p>This new map's URL is <a href='/map/" + data + "'>/map/" + data + "/</a></p>");
+        })
+};
+SaveData.prototype.save = function() {
+    console.log(this.base64());
+    var dataOutput = this.base64()
+    $.post(
+        window.location.href,
+        {data: dataOutput},
+        function(data,status){
+            console.log(data);
+            console.log(status);
+            window.history.pushState('Object', 'Title', "/map/" + data);
+            vex.dialog.alert("<p>Saved Successfully!</p><p>This map's URL is <a href='/map/" + data + "'>/map/" + data + "/</a></p>");
         })
 };
 SaveData.prototype.base64 = function() {
@@ -39,6 +52,14 @@ SaveData.prototype.base64 = function() {
 };
 SaveData.prototype.metadata = function() {
     var output = "";
+    switch (map.getMapTypeId()) {
+        case 'roadmap':
+            output += "tr:";
+            break;
+        case 'hybrid':
+            output += "th:";
+            break;
+    };
     output += "z" + map.zoom + ":";
     output += "c" + map.getCenter().toString() + ":";
     output = output.replace(/\(/g, '').replace(/\)/g, '').replace(' ', '');
@@ -64,6 +85,19 @@ function saveControl() {
 
     saveControlDiv.index = 1;
     map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(saveControlDiv);
+}
+
+function saveAsControl() {
+    // create save control div
+
+    // Create the DIV to hold the control and
+    // call the SaveControl() constructor passing
+    // in this DIV.
+    var saveAsControlDiv = document.createElement('div');
+    var saveAsControl = new SaveAsControl(saveAsControlDiv, map);
+
+    saveAsControlDiv.index = 1;
+    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(saveAsControlDiv);
 }
 
 
@@ -104,6 +138,43 @@ function SaveControl(controlDiv, map) {
     // Chicago
     google.maps.event.addDomListener(controlUI, 'click', function() {
         save.save();
+    });
+
+}
+/**
+ * The SaveControl adds a control to the map that saves the current save state
+ */
+
+function SaveAsControl(controlDiv, map) {
+
+    // Set CSS styles for the DIV containing the control
+    // Setting padding to 5 px will offset the control
+    // from the edge of the map
+    controlDiv.style.padding = '5px';
+
+    // Set CSS for the control border
+    var controlUI = document.createElement('div');
+    controlUI.style.backgroundColor = 'white';
+    controlUI.style.borderStyle = 'solid';
+    controlUI.style.borderWidth = '2px';
+    controlUI.style.cursor = 'pointer';
+    controlUI.style.textAlign = 'center';
+    controlUI.title = 'Click to save a new copy of this map';
+    controlDiv.appendChild(controlUI);
+
+    // Set CSS for the control interior
+    var controlText = document.createElement('div');
+    controlText.style.fontFamily = 'Arial,sans-serif';
+    controlText.style.fontSize = '12px';
+    controlText.style.paddingLeft = '4px';
+    controlText.style.paddingRight = '4px';
+    controlText.innerHTML = '<b>Save A Copy</b>';
+    controlUI.appendChild(controlText);
+
+    // Setup the click event listeners: simply set the map to
+    // Chicago
+    google.maps.event.addDomListener(controlUI, 'click', function() {
+        save.saveAs();
     });
 
 }
