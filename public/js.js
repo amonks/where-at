@@ -4,7 +4,9 @@ var map;
 function initialize() {
     vex.defaultOptions.className = 'vex-theme-plain';
 
-    vex.dialog.alert($("#readme").html())
+    if ($("#readme").html().length >= 5) {
+        vex.dialog.alert($("#readme").html())
+    }
 
     var mapOptions = {
         disableDefaultUI: true,
