@@ -6,26 +6,26 @@ module.exports = function(grunt) {
                 src: [
                     'css/*'
                 ],
-                dest: 'css.css'
+                dest: 'public/css.css'
             },
             js: {
                 src: [
                     'js/*'
                 ],
-                dest: 'js.js'
+                dest: 'public/js.js'
             }
         },
         cssmin: {
             css: {
-                src: 'css.css',
-                dest: 'css.min.css'
+                src: 'public/css.css',
+                dest: 'public/css.min.css'
             }
         },
 
         uglify: {
             js: {
                 files: {
-                    'js.min.js': ['js.js']
+                    'public/js.min.js': ['public/js.js']
                 }
             }
         }

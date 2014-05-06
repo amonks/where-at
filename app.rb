@@ -5,15 +5,15 @@ require 'bundler'
 require 'date'
 Bundler.require
 
-# DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_VIOLET_URL'])
-DataMapper.setup(:default, "postgres://localhost:5432/where")
+DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_VIOLET_URL'])
+# DataMapper.setup(:default, "postgres://localhost:5432/mapz")
 
 # Define a simple DataMapper model.
 class Map
   include DataMapper::Resource
 
   property :map_id, Serial, :key => true
-  property :map_content, Text  # limit to 65535 chars by default; way less than urls but still potentially a problem for large maps
+  property :data, Text  # limit to 65535 chars by default; way less than urls but still potentially a problem for large maps
   property :creation_date, DateTime
   property :update_date, DateTime
 end
@@ -28,13 +28,20 @@ DataMapper.auto_upgrade!
 
 
 
-
 get '/' do
-  redirect '/map/new'
+  haml :map
 end
 
-get '/charts/max_deaths' do
-  Station.all(:order => [:death_rate.desc]).to_json
+get '/map/:map_id' do
+  @map = Map.get(params[:map_id])
+  puts @map
+  @data = @map.data
+  haml :map
 end
 
+post '/map/new' do
+  @data = params['data']
+  @map = Map.create(:data => @data, :creation_date => Time.now)
+  halt 200, @map.map_id.to_s
+end
 

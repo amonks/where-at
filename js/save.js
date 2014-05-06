@@ -6,20 +6,33 @@ var save = new SaveData;
 function SaveData() {
     this.drawLog = [];
 };
+// SaveData.prototype.saveToShortUrl = function() {
+//     console.log(this.base64());
+//     longUrl = window.location.href.split('?')[0] + "?" + this.base64()
+//     jQuery.urlShortener({
+//         longUrl: longUrl,
+//         success: function(shortUrl) {
+//             alert(shortUrl);
+//             console.log(shortUrl);
+//             window.location = shortUrl;
+//         },
+//         error: function(err) {
+//             alert(JSON.stringify(err));
+//         }
+//     });
+// };
 SaveData.prototype.save = function() {
     console.log(this.base64());
-    longUrl = window.location.href.split('?')[0] + "?" + this.base64()
-    jQuery.urlShortener({
-        longUrl: longUrl,
-        success: function(shortUrl) {
-            alert(shortUrl);
-            console.log(shortUrl);
-            window.location = shortUrl;
-        },
-        error: function(err) {
-            alert(JSON.stringify(err));
-        }
-    });
+    var dataOutput = this.base64()
+    $.post(
+        "/map/new",
+        {data: dataOutput},
+        function(data,status){
+            console.log(data);
+            console.log(status);
+            window.location = window.location.href.split('/')[0] + "/map/" + data;
+            alert(window.location.href.split('/')[0] + "/map/" + data);
+        })
 };
 SaveData.prototype.base64 = function() {
     return LZString.compressToBase64(this.metadata() + this.drawLog.join(':'));
@@ -41,8 +54,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 function saveControl() {
-
-
     // create save control div
 
     // Create the DIV to hold the control and
@@ -53,8 +64,6 @@ function saveControl() {
 
     saveControlDiv.index = 1;
     map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(saveControlDiv);
-
-
 }
 
 
@@ -88,7 +97,7 @@ function SaveControl(controlDiv, map) {
     controlText.style.fontSize = '12px';
     controlText.style.paddingLeft = '4px';
     controlText.style.paddingRight = '4px';
-    controlText.innerHTML = '<b>Share</b>';
+    controlText.innerHTML = '<b>Save</b>';
     controlUI.appendChild(controlText);
 
     // Setup the click event listeners: simply set the map to

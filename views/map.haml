@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    / header
+    %title Where At?
+    / viewport
+    %meta{content: "initial-scale=1.0, user-scalable=no", name: "viewport"}/
+    / css
+    %link{href: "/css.min.css", rel: "stylesheet"}/
+  %body
+    / jquery
+    %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", type: "text/javascript"}
+    / google maps
+    %script{src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDIPa8VjR1Iybo-vl60dd3CpSmw2zyMfvA&sensor=true&libraries=geometry,drawing,places", type: "text/javascript"}
+    / (m)app
+    %script{src: "/js.js", type: "text/javascript"}
+    / search box
+    %input#pac-input.controls{placeholder: "Search Box", type: "text"}/
+    / map
+    #map-canvas
+    #data
+      = @data

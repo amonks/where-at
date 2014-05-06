@@ -80,10 +80,6 @@ function constructCenter(logstring) {
 }
 
 
-
-
-// function to get the current query string (anything in the location bar after a '?'), and de-base64 it.
-
 function getQueryString() {
     if (window.location.href.indexOf('?') == -1) {
         // if there's no '?', there's no query string...
@@ -98,12 +94,23 @@ function getQueryString() {
 }
 
 
+// function to get the current query string (anything in the location bar after a '?'), and de-base64 it.
+
+function getDataString() {
+    var theData = $('#data').text();
+    if (theData.length == 0) {
+        return null;
+    };
+    return LZString.decompressFromBase64(theData);
+}
+
+
 function getOverlayArray() {
-    return getQueryString().split(':');
+    return getDataString().split(':');
 }
 
 function load() {
-    if (getQueryString() !== null) {
+    if (getDataString() !== null) {
         var overlayArray = getOverlayArray();
         console.log(overlayArray);
         for (var i = overlayArray.length - 1; i >= 0; i--) {
