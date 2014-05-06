@@ -1,6 +1,6 @@
 
 
-function InfoControl() {
+function infoControl() {
 
 
     // create Info control div
@@ -8,10 +8,10 @@ function InfoControl() {
     // Create the DIV to hold the control and
     // call the InfoControl() constructor passing
     // in this DIV.
-    var InfoControlDiv = document.createElement('div');
-    var InfoControl = new InfoControl(InfoControlDiv, map);
+    var infoControlDiv = document.createElement('div');
+    var infoControl = new InfoControl(InfoControlDiv, map);
 
-    InfoControlDiv.index = 1;
+    infoControlDiv.index = 1;
     map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(InfoControlDiv);
 
 
