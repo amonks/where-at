@@ -14,6 +14,7 @@ class Map
 
   property :map_id, Serial, :key => true
   property :data, Text  # limit to 65535 chars by default; way less than urls but still potentially a problem for large maps
+  property :name, String
   property :creation_date, DateTime
   property :update_date, DateTime
 end
@@ -29,19 +30,21 @@ DataMapper.auto_upgrade!
 
 
 get '/' do
+  @name = "Where At?"
   @readme = markdown :readme
   haml :map
 end
 
 get '/map/:map_id' do
   @map = Map.get(params[:map_id])
+  @name = @map.name
   @data = @map.data
   haml :map
 end
 
 post '/' do
   @data = params['data']
-  @map = Map.create(:data => @data, :creation_date => Time.now)
+  @map = Map.create(:data => @data, :creation_date => Time.now, :name => params['name'])
   halt 200, @map.map_id.to_s
 end
 

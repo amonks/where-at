@@ -15,7 +15,7 @@ body {
 
 }
 
-#data {
+#data, #readme, #title {
 
     display: none;
 

@@ -4,7 +4,7 @@ var map;
 function initialize() {
     vex.defaultOptions.className = 'vex-theme-plain';
 
-    if ($("#readme").html().length >= 5) {
+    if ($("#readme").html().length >= 15) {
         vex.dialog.alert($("#readme").html())
     }
 

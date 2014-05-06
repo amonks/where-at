@@ -24,28 +24,44 @@ function SaveData() {
 SaveData.prototype.saveAs = function() {
     console.log(this.base64());
     var dataOutput = this.base64()
-    $.post(
-        "/",
-        {data: dataOutput},
-        function(data,status){
-            console.log(data);
-            console.log(status);
-            window.history.pushState('Object', 'Title', "/map/" + data);
-            vex.dialog.alert("<p>Saved Successfully!</p><p>This new map's URL is <a href='/map/" + data + "'>/map/" + data + "/</a></p>");
-        })
+
+    vex.dialog.prompt({
+        message: 'What would you like to name this map?',
+        placeholder: 'Cool Map!',
+        callback: function(value) {
+            document.title = value;
+            $.post(
+                "/", {
+                    name: value,
+                    data: dataOutput
+                },
+                function(data, status) {
+                    console.log(data);
+                    console.log(status);
+                    window.history.pushState('Object', 'Title', "/map/" + data);
+                    vex.dialog.alert("<p>Saved Successfully!</p><p>This new map's URL is <a href='/map/" + data + "'>/map/" + data + "/</a></p>");
+                })
+        }
+    });
 };
 SaveData.prototype.save = function() {
     console.log(this.base64());
     var dataOutput = this.base64()
-    $.post(
-        window.location.href,
-        {data: dataOutput},
-        function(data,status){
-            console.log(data);
-            console.log(status);
-            window.history.pushState('Object', 'Title', "/map/" + data);
-            vex.dialog.alert("<p>Saved Successfully!</p><p>This map's URL is <a href='/map/" + data + "'>/map/" + data + "/</a></p>");
-        })
+
+    if (window.location.href.indexOf("map") == -1) {
+        save.saveAs();
+    } else {
+        $.post(
+            window.location.href, {
+                data: dataOutput
+            },
+            function(data, status) {
+                console.log(data);
+                console.log(status);
+                window.history.pushState('Object', 'Title', "/map/" + data);
+                vex.dialog.alert("<p>Saved Successfully!</p><p>This map's URL is <a href='/map/" + data + "'>/map/" + data + "/</a></p>");
+            })
+    }
 };
 SaveData.prototype.base64 = function() {
     return LZString.compressToBase64(this.metadata() + this.drawLog.join(':'));
