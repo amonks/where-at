@@ -100,7 +100,7 @@ function saveControl() {
     var saveControl = new SaveControl(saveControlDiv, map);
 
     saveControlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(saveControlDiv);
+    map.controls[google.maps.ControlPosition.BOTTOM_RIGHT].push(saveControlDiv);
 }
 
 function saveAsControl() {
@@ -113,7 +113,7 @@ function saveAsControl() {
     var saveAsControl = new SaveAsControl(saveAsControlDiv, map);
 
     saveAsControlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(saveAsControlDiv);
+    map.controls[google.maps.ControlPosition.BOTTOM_RIGHT].push(saveAsControlDiv);
 }
 
 
@@ -184,7 +184,7 @@ function SaveAsControl(controlDiv, map) {
     controlText.style.fontSize = '12px';
     controlText.style.paddingLeft = '4px';
     controlText.style.paddingRight = '4px';
-    controlText.innerHTML = '<b>Save A Copy</b>';
+    controlText.innerHTML = '<b>Duplicate</b>';
     controlUI.appendChild(controlText);
 
     // Setup the click event listeners: simply set the map to

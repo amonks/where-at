@@ -12,7 +12,7 @@ function clearControl() {
     var clearControl = new ClearControl(clearControlDiv, map);
 
     clearControlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(clearControlDiv);
+    map.controls[google.maps.ControlPosition.BOTTOM_RIGHT].push(clearControlDiv);
 
 
 }

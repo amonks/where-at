@@ -15,6 +15,7 @@ function initialize() {
         zoom: 10,
         mapTypeControl: true,
         mapTypeControlOptions: {
+            position: google.maps.ControlPosition.BOTTOM_RIGHT,
             style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
             mapTypeIds: [
                 google.maps.MapTypeId.ROADMAP, 

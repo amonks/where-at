@@ -1,15 +1,29 @@
 Where At?
 =========
 
-## Collaborative Mapping
+[Where At?](http://where.kim) is a simple tool for annotating, sharing, and collaborating on maps.
 
-You can use the drawing tools at the top left to draw on the map. When you're done, you can save your map with the 'save' button on the bottom left, and share it with your buddies.
+## Drawing
+
+![tools](http://where.kim/images/tools.png "The Drawing Tools")
+
+Select either the line-drawing or marker-placing tool at the top left, then touch the map to draw a line or place a marker.
+
+## Sharing
+
+When you're done, you can click "Save" at the bottom right to share your map. Your map will be given a unique URL, which you can send to anyone you'd like.
+
+## Collaborating
+
+Because maps can be re-saved, it's possible to make collaborative maps. Make a map, save it, and pass along the URL. Anyone else can then add their own annotations and resave the map.
 
 ### Examples
 
+*	[Some places I have lived](http://www.where.kim/map/7)
+
 *	[Directions to my apartment](http://www.where.kim/map/6)
 
-*	[Some places I have lived](http://www.where.kim/map/7)
+*	[Map of SAIC students' homes](http://www.where.kim/map/8)
 
 ### Tips
 
