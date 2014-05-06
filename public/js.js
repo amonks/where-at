@@ -4,8 +4,8 @@ var map;
 function initialize() {
     vex.defaultOptions.className = 'vex-theme-plain';
 
-    if ($("#readme").html().length >= 15) {
-        vex.dialog.alert($("#readme").html())
+    if (window.location.href === "http://www.where.kim/") {
+        vex.dialog.alert($("#info").html())
     }
 
     var mapOptions = {
@@ -169,6 +169,66 @@ function draw() {
     });
 }
 
+
+
+function InfoControl() {
+
+
+    // create Info control div
+
+    // Create the DIV to hold the control and
+    // call the InfoControl() constructor passing
+    // in this DIV.
+    var InfoControlDiv = document.createElement('div');
+    var InfoControl = new InfoControl(InfoControlDiv, map);
+
+    InfoControlDiv.index = 1;
+    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(InfoControlDiv);
+
+
+}
+
+
+
+
+
+/**
+ * The InfoControl adds a control to the map that Infos the current Info state
+ */
+
+function InfoControl(controlDiv, map) {
+
+    // Set CSS styles for the DIV containing the control
+    // Setting padding to 5 px will offset the control
+    // from the edge of the map
+    controlDiv.style.padding = '5px';
+
+    // Set CSS for the control border
+    var controlUI = document.createElement('div');
+    controlUI.style.backgroundColor = 'white';
+    controlUI.style.borderStyle = 'solid';
+    controlUI.style.borderWidth = '2px';
+    controlUI.style.cursor = 'pointer';
+    controlUI.style.textAlign = 'center';
+    controlUI.title = 'Click for Information and Help';
+    controlDiv.appendChild(controlUI);
+
+    // Set CSS for the control interior
+    var controlText = document.createElement('div');
+    controlText.style.fontFamily = 'Arial,sans-serif';
+    controlText.style.fontSize = '12px';
+    controlText.style.paddingLeft = '4px';
+    controlText.style.paddingRight = '4px';
+    controlText.innerHTML = '<b>Info</b>';
+    controlUI.appendChild(controlText);
+
+    // Setup the click event listeners: simply set the map to
+    // Chicago
+    google.maps.event.addDomListener(controlUI, 'click', function() {
+        vex.dialog.alert($("#readme").html())
+    });
+
+}
 /*!
 * jQuery URL Shortener 1.0
 * https://github.com/hayageek/jQuery-URL-shortener
@@ -1094,7 +1154,7 @@ function saveControl() {
     var saveControl = new SaveControl(saveControlDiv, map);
 
     saveControlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.BOTTOM_RIGHT].push(saveControlDiv);
+    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(saveControlDiv);
 }
 
 function saveAsControl() {
@@ -1107,7 +1167,7 @@ function saveAsControl() {
     var saveAsControl = new SaveAsControl(saveAsControlDiv, map);
 
     saveAsControlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.BOTTOM_RIGHT].push(saveAsControlDiv);
+    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(saveAsControlDiv);
 }
 
 
