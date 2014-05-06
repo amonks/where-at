@@ -11,7 +11,7 @@ Select either the line-drawing or marker-placing tool at the top left, then touc
 
 ## Sharing
 
-When you're done, you can click "Save" at the bottom right to share your map. Your map will be given a unique URL, which you can send to anyone you'd like.
+When you're done, you can click "Save" at the bottom to share your map. Your map will be given a unique URL, which you can send to anyone you'd like.
 
 ## Collaborating
 

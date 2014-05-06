@@ -31,6 +31,7 @@ DataMapper.auto_upgrade!
 
 get '/' do
   @name = "Where At?"
+  @info = markdown :info
   @readme = markdown :readme
   haml :map
 end

@@ -100,7 +100,7 @@ function saveControl() {
     var saveControl = new SaveControl(saveControlDiv, map);
 
     saveControlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.BOTTOM_RIGHT].push(saveControlDiv);
+    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(saveControlDiv);
 }
 
 function saveAsControl() {
@@ -113,7 +113,7 @@ function saveAsControl() {
     var saveAsControl = new SaveAsControl(saveAsControlDiv, map);
 
     saveAsControlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.BOTTOM_RIGHT].push(saveAsControlDiv);
+    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(saveAsControlDiv);
 }
 
 

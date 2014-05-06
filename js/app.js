@@ -4,8 +4,8 @@ var map;
 function initialize() {
     vex.defaultOptions.className = 'vex-theme-plain';
 
-    if ($("#readme").html().length >= 15) {
-        vex.dialog.alert($("#readme").html())
+    if (window.location.href === "http://www.where.kim/") {
+        vex.dialog.alert($("#info").html())
     }
 
     var mapOptions = {
