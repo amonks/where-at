@@ -34,7 +34,6 @@ get '/' do
 end
 
 get '/map/:map_id' do
-  @readme = markdown :readme
   @map = Map.get(params[:map_id])
   @data = @map.data
   haml :map
