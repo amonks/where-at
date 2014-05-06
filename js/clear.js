@@ -39,7 +39,7 @@ function ClearControl(controlDiv, map) {
     controlUI.style.borderWidth = '2px';
     controlUI.style.cursor = 'pointer';
     controlUI.style.textAlign = 'center';
-    controlUI.title = 'Click to set the map to Home';
+    controlUI.title = 'Click to start a new map';
     controlDiv.appendChild(controlUI);
 
     // Set CSS for the control interior
@@ -48,13 +48,13 @@ function ClearControl(controlDiv, map) {
     controlText.style.fontSize = '12px';
     controlText.style.paddingLeft = '4px';
     controlText.style.paddingRight = '4px';
-    controlText.innerHTML = '<b>Clear</b>';
+    controlText.innerHTML = '<b>New</b>';
     controlUI.appendChild(controlText);
 
     // Setup the click event listeners: simply set the map to
     // Chicago
     google.maps.event.addDomListener(controlUI, 'click', function() {
-        window.location = window.location.href.split('?')[0];
+        window.location.href = '/';
     });
 
 }

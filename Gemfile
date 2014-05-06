@@ -4,6 +4,8 @@ gem 'sinatra'
 gem 'haml'
 gem 'maruku'
 
+gem 'newrelic_rpm'
+
 gem 'data_mapper'
 
 gem 'dm-postgres-adapter'

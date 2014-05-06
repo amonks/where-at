@@ -60,6 +60,7 @@ GEM
     json_pure (1.8.1)
     maruku (0.7.1)
     multi_json (1.10.0)
+    newrelic_rpm (3.7.3.204)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -79,4 +80,5 @@ DEPENDENCIES
   dm-postgres-adapter
   haml
   maruku
+  newrelic_rpm
   sinatra

@@ -31,7 +31,7 @@ SaveData.prototype.save = function() {
             console.log(data);
             console.log(status);
             window.location = window.location.href.split('/')[0] + "/map/" + data;
-            alert(window.location.href.split('/')[0] + "/map/" + data);
+            // alert(window.location.href.split('/')[0] + "/map/" + data);
         })
 };
 SaveData.prototype.base64 = function() {
@@ -88,7 +88,7 @@ function SaveControl(controlDiv, map) {
     controlUI.style.borderWidth = '2px';
     controlUI.style.cursor = 'pointer';
     controlUI.style.textAlign = 'center';
-    controlUI.title = 'Click to set the map to Home';
+    controlUI.title = 'Click to save this map';
     controlDiv.appendChild(controlUI);
 
     // Set CSS for the control interior
