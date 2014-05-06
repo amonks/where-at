@@ -7,7 +7,7 @@ You can use the drawing tools at the top left to draw on the map. When you're do
 
 ### Examples
 
-*	[Directions to my apartment](/map/4)
+*	[Directions to my apartment](http://www.where.kim/map/6)
 
-*	[Some places I have lived](/map/5)
+*	[Some places I have lived](http://www.where.kim/map/7)
 
