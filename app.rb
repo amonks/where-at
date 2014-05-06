@@ -5,8 +5,8 @@ require 'bundler'
 require 'date'
 Bundler.require
 
-# DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_TEAL_URL'])
-DataMapper.setup(:default, "postgres://localhost:5432/mapz")
+DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_TEAL_URL'])
+# DataMapper.setup(:default, "postgres://localhost:5432/mapz")
 
 # Define a simple DataMapper model.
 class Map
