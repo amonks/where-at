@@ -15,6 +15,7 @@ class Map
   property :map_id, Serial, :key => true
   property :data, Text  # limit to 65535 chars by default; way less than urls but still potentially a problem for large maps
   property :name, String
+  property :editable?, Boolean, :default => true
   property :creation_date, DateTime
   property :update_date, DateTime
 end
@@ -41,8 +42,21 @@ get '/map/:map_id' do
   @name = @map.name
   @info = markdown :info
   @readme = markdown :readme
+  @edit = @map.editable?
   @data = @map.data
   haml :map
+end
+
+get '/map/:map_id/lock' do
+  @map = Map.get(params[:map_id])
+  @map.update(:editable? => false)
+  redirect '/map/' + params[:map_id]
+end
+
+get '/map/:map_id/unlock' do
+  @map = Map.get(params[:map_id])
+  @map.update(:editable? => true)
+  redirect '/map/' + params[:map_id]
 end
 
 post '/' do

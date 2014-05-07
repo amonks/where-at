@@ -1100,22 +1100,27 @@ SaveData.prototype.saveAs = function() {
     });
 };
 SaveData.prototype.save = function() {
-    console.log(this.base64());
-    var dataOutput = this.base64()
+    if ($("#edit").text().indexOf("true") != -1) {
+        vex.dialog.alert("<p>Can't Save!</p><p>This map isn't editable. You can make a duplicate copy if you'd like to make changes.</p>");
 
-    if (window.location.href.indexOf("map") == -1) {
-        save.saveAs();
     } else {
-        $.post(
-            window.location.href, {
-                data: dataOutput
-            },
-            function(data, status) {
-                console.log(data);
-                console.log(status);
-                window.history.pushState('Object', 'Title', "/map/" + data);
-                vex.dialog.alert("<p>Saved Successfully!</p><p>This map's URL is <a href='/map/" + data + "'>/map/" + data + "/</a></p>");
-            })
+        console.log(this.base64());
+        var dataOutput = this.base64()
+
+        if (window.location.href.indexOf("map") == -1) {
+            save.saveAs();
+        } else {
+            $.post(
+                window.location.href, {
+                    data: dataOutput
+                },
+                function(data, status) {
+                    console.log(data);
+                    console.log(status);
+                    window.history.pushState('Object', 'Title', "/map/" + data);
+                    vex.dialog.alert("<p>Saved Successfully!</p><p>This map's URL is <a href='/map/" + data + "'>/map/" + data + "/</a></p>");
+                })
+        }
     }
 };
 SaveData.prototype.base64 = function() {
