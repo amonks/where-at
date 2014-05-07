@@ -164,29 +164,104 @@
 	"buffers":
 	[
 		{
-			"file": "app.rb",
+			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 908,
+				"buffer_size": 1336,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "config.ru",
+			"file": "js/app.js",
 			"settings":
 			{
-				"buffer_size": 40,
-				"line_ending": "Unix",
-				"name": "require './app'"
+				"buffer_size": 1066,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/clear.js",
+			"settings":
+			{
+				"buffer_size": 1685,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/save.js",
+			"settings":
+			{
+				"buffer_size": 6095,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/info.js",
+			"settings":
+			{
+				"buffer_size": 1686,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/info.md",
+			"settings":
+			{
+				"buffer_size": 347,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/map.haml",
+			"settings":
+			{
+				"buffer_size": 758,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/style.css",
+			"settings":
+			{
+				"buffer_size": 1154,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app.rb",
+			"settings":
+			{
+				"buffer_size": 1347,
+				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 159.0,
+		"height": 137.0,
 		"selected_items":
 		[
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"image",
+				"Snippet: input - image"
+			],
+			[
+				"prett",
+				"HTMLPrettify"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"haml",
+				"Set Syntax: Ruby Haml"
+			],
 			[
 				"project",
 				"Project: Save As"
@@ -220,10 +295,6 @@
 				"HTMLPrettify"
 			],
 			[
-				"prett",
-				"HTMLPrettify"
-			],
-			[
 				"min",
 				"Minify::Minify File"
 			],
@@ -250,10 +321,6 @@
 			[
 				"install",
 				"Package Control: Install Package"
-			],
-			[
-				"haml",
-				"Set Syntax: Ruby Haml"
 			],
 			[
 				"ruby",
@@ -309,10 +376,6 @@
 			],
 			[
 				"word wrap",
-				"Word Wrap: Toggle"
-			],
-			[
-				"wrap",
 				"Word Wrap: Toggle"
 			],
 			[
@@ -457,6 +520,26 @@
 	},
 	"file_history":
 	[
+		"/Users/ajm/Dropbox/Work/2014 - where/views/info.md",
+		"/Users/ajm/Dropbox/Work/2014 - where/app.rb",
+		"/Users/ajm/Dropbox/Work/2014 - where/css/style.css",
+		"/Users/ajm/Dropbox/Work/2014 - where/js/clear.js",
+		"/Users/ajm/Dropbox/Work/2014 - where/js/save.js",
+		"/Users/ajm/Dropbox/Work/2014 - where/js/app.js",
+		"/Users/ajm/Dropbox/Work/2014 - where/views/map.haml",
+		"/Users/ajm/Dropbox/Work/2014 - where/css/vex-theme-plain.css",
+		"/Users/ajm/Dropbox/Work/2014 - where/index.html",
+		"/Users/ajm/Dropbox/Work/2014 - where/Gruntfile.js",
+		"/Users/ajm/Dropbox/Work/2014 - where/README.md",
+		"/Users/ajm/Dropbox/Work/2014 - where/views/readme.md",
+		"/Users/ajm/Dropbox/Work/2014 - where/CNAME",
+		"/Users/ajm/Dropbox/Work/2014 - where/views/modal.haml",
+		"/Users/ajm/Dropbox/Work/2014 - where/Gemfile",
+		"/Users/ajm/Dropbox/Work/2014 - where/config.ru",
+		"/Users/ajm/Dropbox/Work/2014 - where/js/load.js",
+		"/Users/ajm/Dropbox/Work/2014 - where/js/draw.js",
+		"/Users/ajm/Dropbox/Work/2014 - where/public/js.js",
+		"/Users/ajm/Dropbox/Work/2014 - where/js/load.min.js",
 		"/Users/ajm/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/ajm/Library/Application Support/Sublime Text 3/Packages/Minify/Minify.sublime-settings",
 		"/Users/ajm/Dropbox/Sites/belgianman.com/index.html",
@@ -564,31 +647,11 @@
 		"/Users/ajm/Dropbox/Desktop/thundercat/_layouts/artist_page.html",
 		"/Users/ajm/Dropbox/Desktop/thundercat/_plugins/make_artist_pages.rb",
 		"/Users/ajm/Dropbox/Desktop/thundercat/make_artist_pages.rb",
-		"/Users/ajm/Dropbox/Desktop/human machine interaction.mdown",
-		"/Users/ajm/Dropbox/Desktop/thundercat/js/controllers.js",
-		"/Users/ajm/Dropbox/Desktop/ctadailyridership/ctadailyridership-circles.pde",
-		"/Users/ajm/Dropbox/Desktop/doger/embed.html",
-		"/Users/ajm/Dropbox/Desktop/doger/image.html",
-		"/Users/ajm/Dropbox/Desktop/doger/index.html",
-		"/Users/ajm/Dropbox/Desktop/doger/test.html",
-		"/Users/ajm/Dropbox/Desktop/doger/js/bookmarklet.js",
-		"/Users/ajm/Dropbox/Desktop/doger/js/bookmarklet.min.js",
-		"/Users/ajm/Dropbox/Desktop/doger/doger.js",
-		"/Users/ajm/Dropbox/Desktop/doger/doger.min.js",
-		"/Users/ajm/Dropbox/Desktop/doger/doger_test.js",
-		"/Users/ajm/Dropbox/Desktop/doger/test_coverage.md",
-		"/Users/ajm/Dropbox/Desktop/doger/bookmarklet.min.js",
-		"/Users/ajm/Dropbox/Desktop/doger/doger_test.min.js",
-		"/Users/ajm/Library/Application Support/Sublime Text 3/Packages/User/Minify.sublime-settings",
-		"/Users/ajm/Dropbox/Desktop/doger/README.md",
-		"/Users/ajm/Dropbox/Desktop/doger/doger.beautified.js",
-		"/Users/ajm/Dropbox/Desktop/doger/bookmarklet.js",
-		"/Users/ajm/Dropbox/Work/2014 - algorithms + ai/doger/README.md",
-		"/Users/ajm/Dropbox/Work/2014 - algorithms + ai/doger/doger.js"
+		"/Users/ajm/Dropbox/Desktop/human machine interaction.mdown"
 	],
 	"find":
 	{
-		"height": 31.0
+		"height": 41.0
 	},
 	"find_in_files":
 	{
@@ -603,6 +666,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"bottom_right",
+			"clear",
+			"width",
+			"top",
+			"indexOf",
+			"  ",
+			"    ",
+			"alert",
+			"end",
+			"params",
 			"proxyurl",
 			"Parse",
 			"snaps",
@@ -720,17 +793,7 @@
 			"\"death_rate\":[a-z0-9\\.]*,",
 			"\"death_trip_id\":[a-z0-9]*,",
 			"\"birth_trip_id\":[a-z0-9]*,",
-			"\"dbcapacity\":[a-z0-9]*,",
-			"\"lifespan\":[a-z0-9]*,",
-			"\"died_early\":[a-z]*,",
-			"\"trip_count\":[0-9]*,",
-			"\"station_id\":[0-9]*,",
-			"\"station_id\":[0-9]*,\"trip_count\":[0-9]*,\"birth_trip_id\":[0-9]*,\"death_trip_id\":[0-9]*,\"birth_time\":\"[a-zA-Z0-9\\ ]*\",\"death_time\":\"[a-zA-Z0-9\\ ]*\",\"birth_bike_id\":\"[0-9]*\",\"death_bike_id\":\"[0-9]*\",\"name\":\"[a-zA-Z0-9\\ ]*\",\"died_early\":[a-z]*,\"birth_count\":[0-9]*,",
-			"\"station_id\":[0-9]*,\"trip_count\":[0-9]*,\"birth_trip_id\":[0-9]*,\"death_trip_id\":[0-9]*,\"birth_time\":\"[a-zA-Z0-9\\s]*\",\"death_time\":\"[a-zA-Z0-9\\s]*\",\"birth_bike_id\":\"[0-9]*\",\"death_bike_id\":\"[0-9]*\",\"name\":\"[a-zA-Z0-9\\s]*\",\"died_early\":[a-z]*,\"birth_count\":[0-9]*,",
-			"\"station_id\":[0-9]*,\"trip_count\":[0-9]*,\"birth_trip_id\":[0-9]*,\"death_trip_id\":[0-9]*,\"birth_time\":\"[\\s\\w]*\",\"death_time\":\"[\\s\\w]*\",\"birth_bike_id\":\"[0-9]*\",\"death_bike_id\":\"[0-9]*\",\"name\":\"[\\s\\w]*\",\"died_early\":[a-z]*,\"birth_count\":[0-9]*,",
-			"\"lng",
-			"\"lat",
-			"\"[0-9]{1,3}\":"
+			"\"dbcapacity\":[a-z0-9]*,"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -756,31 +819,211 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 8,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app.rb",
+					"file": "README.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 908,
+						"buffer_size": 1336,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								329,
-								329
+								387,
+								387
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1066,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								819,
+								819
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 224.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/clear.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1685,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								389,
+								389
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/save.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6095,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3142,
+								3142
+							],
+							[
+								3557,
+								3557
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2062.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/info.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1686,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1311,
+								1311
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 239.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "views/info.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								347,
+								347
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "views/map.haml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 758,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								540,
+								540
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -790,29 +1033,60 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "config.ru",
+					"buffer": 7,
+					"file": "css/style.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 40,
+						"buffer_size": 1154,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								40,
-								40
+								123,
+								123
 							]
 						],
 						"settings":
 						{
-							"auto_name": "require './app'",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								856,
+								885
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 384.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -901,7 +1175,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 185.0,
+	"side_bar_width": 201.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

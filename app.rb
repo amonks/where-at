@@ -39,6 +39,8 @@ end
 get '/map/:map_id' do
   @map = Map.get(params[:map_id])
   @name = @map.name
+  @info = markdown :info
+  @readme = markdown :readme
   @data = @map.data
   haml :map
 end
